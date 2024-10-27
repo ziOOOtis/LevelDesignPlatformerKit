@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://cyvet7kb6y80r"]
+
+[ext_resource type="Script" path="res://scripts/check_point.gd" id="1_tieuc"]
+[ext_resource type="PackedScene" uid="uid://73nktay1f7dh" path="res://models/props/jewel.glb" id="2_025fv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_15vf6"]
+albedo_color = Color(1, 0.368627, 0.607843, 1)
+metallic = 0.65
+metallic_specular = 1.0
+roughness = 0.4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7onid"]
+albedo_color = Color(1, 0.368595, 0.606612, 1)
+metallic = 0.65
+metallic_specular = 1.0
+roughness = 0.4
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ekyr4"]
+size = Vector3(1, 1.5, 1)
+
+[node name="checkpoint" type="Node3D"]
+script = ExtResource("1_tieuc")
+jewel_material = SubResource("StandardMaterial3D_15vf6")
+activated_color = Color(0.329412, 0.721569, 0.513726, 1)
+
+[node name="mesh_offset" type="Node3D" parent="."]
+
+[node name="jewel" parent="mesh_offset" instance=ExtResource("2_025fv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.5, 0)
+
+[node name="jewel" parent="mesh_offset/jewel" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_7onid")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_ekyr4")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+
+[editable path="mesh_offset/jewel"]

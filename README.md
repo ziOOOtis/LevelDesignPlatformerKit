@@ -1,6 +1,4 @@
-<p align="center"><img src="icon.png"/></p>
-
-# Starter Kit 3D Platformer
+# A modified Starter Kit 3D Platformer
 
 This package includes a basic template for a 3D platformer game in Godot 4.3 (stable). Includes features like;
 
@@ -11,9 +9,7 @@ This package includes a basic template for a 3D platformer game in Godot 4.3 (st
 - Sprites and 3D Models _(CC0 licensed)_
 - Sound effects _(CC0 licensed)_
 
-### Screenshot
-
-<p align="center"><img src="screenshots/screenshot.png"/></p>
+- There have been multiple changes and additions such as checkpoints, and more, to expand the functionality
 
 ### License
 

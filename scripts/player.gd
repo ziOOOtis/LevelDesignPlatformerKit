@@ -58,11 +58,6 @@ func _physics_process(delta):
 
 	rotation.y = lerp_angle(rotation.y, rotation_direction, delta * 10)
 
-	# Falling/respawning
-
-	if position.y < -10:
-		player_died()
-
 	# Animation for scale (jumping and landing)
 
 	model.scale = model.scale.lerp(Vector3(1, 1, 1), delta * 10)

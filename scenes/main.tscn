@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bqqgyqafm7xwp"]
+[gd_scene load_steps=20 format=3 uid="uid://bqqgyqafm7xwp"]
 
 [ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_ahusb"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_onms2"]
@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://dy017k58p20sk" path="res://objects/cloud.tscn" id="13_drtpy"]
 [ext_resource type="Texture2D" uid="uid://cd7oyc56ehkx1" path="res://sprites/coin.png" id="13_jfda3"]
 [ext_resource type="PackedScene" uid="uid://cyvet7kb6y80r" path="res://objects/checkpoint.tscn" id="14_iy7eg"]
+[ext_resource type="PackedScene" uid="uid://0v6t454aaexr" path="res://objects/door.tscn" id="16_0pfo5"]
+[ext_resource type="PackedScene" uid="uid://g73m8k0j7lyo" path="res://objects/button.tscn" id="17_kptnv"]
 [ext_resource type="FontFile" uid="uid://d0cxd77jybrcn" path="res://fonts/lilita_one_regular.ttf" id="17_tk810"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_38ys3"]
@@ -36,7 +38,7 @@ environment = ExtResource("1_ahusb")
 [node name="Player" parent="." node_paths=PackedStringArray("view") instance=ExtResource("2_onms2")]
 view = NodePath("../View")
 
-[node name="View" type="Node3D" parent="." node_paths=PackedStringArray("target")]
+[node name="View" type="Node3D" parent="." node_paths=PackedStringArray("target") groups=["View"]]
 transform = Transform3D(0.707107, -0.298836, 0.640856, 0, 0.906308, 0.422618, -0.707107, -0.298836, 0.640856, 0, 0, 0)
 script = ExtResource("5_bg0fr")
 target = NodePath("../Player")
@@ -47,6 +49,14 @@ current = true
 fov = 40.0
 
 [node name="World" type="Node3D" parent="."]
+
+[node name="button" parent="World" node_paths=PackedStringArray("target") instance=ExtResource("17_kptnv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.67271, 1.5366, -2.23752)
+target = NodePath("../door")
+
+[node name="door" parent="World" instance=ExtResource("16_0pfo5")]
+transform = Transform3D(-0.191803, 0, 0.981434, 0, 1, 0, -0.981434, 0, -0.191803, -13.7291, 1.54514, -0.00708771)
+look_at_door_when_opens = true
 
 [node name="player_kill_volume" parent="World" instance=ExtResource("4_mddkv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)

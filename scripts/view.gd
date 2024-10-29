@@ -14,6 +14,8 @@ extends Node3D
 
 var camera_rotation:Vector3
 var zoom : float = 10.0
+var look_at_player : bool = true
+var secondary_target : Node
 
 @onready var camera = $Camera
 
@@ -23,17 +25,29 @@ func _ready():
 	pass
 
 func _physics_process(delta):
-	
-	# Set position and rotation to targets
-	
-	self.position = self.position.lerp(target.position, delta * 4)
-	rotation_degrees = rotation_degrees.lerp(camera_rotation, delta * 6)
-	
-	camera.position = camera.position.lerp(Vector3(0, 0, zoom), 8 * delta)
-	
-	handle_input(delta)
+	if look_at_player:
+		# Set position and rotation to targets
+		
+		self.position = self.position.lerp(target.position, delta * 4)
+		rotation_degrees = rotation_degrees.lerp(camera_rotation, delta * 6)
+		
+		camera.position = camera.position.lerp(Vector3(0, 0, zoom), 8 * delta)
+		
+		handle_input(delta)
+	else:
+		if secondary_target:
+			self.position = self.position.lerp(secondary_target.position, delta * 4)
+			camera.look_at(secondary_target.position,Vector3.UP)
+			camera.position = camera.position.lerp(Vector3(0, 0, zoom), 8 * delta)
 
 # Handle input
+
+func look_at_target(_target):
+	print("look")
+	secondary_target = _target
+	look_at_player = false
+	await get_tree().create_timer(2).timeout
+	look_at_player = true
 
 func handle_input(delta):
 	

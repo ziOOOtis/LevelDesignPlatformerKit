@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bs65o07otxbmm"]
+
+[ext_resource type="Script" path="res://scripts/moving_object_path_3d.gd" id="1_xasjo"]
+
+[node name="moving_object_path" type="Path3D"]
+script = ExtResource("1_xasjo")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="."]
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="PathFollow3D"]

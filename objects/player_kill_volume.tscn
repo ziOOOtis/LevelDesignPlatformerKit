@@ -6,6 +6,7 @@
 size = Vector3(1000, 5, 1000)
 
 [node name="player_kill_volume" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
 script = ExtResource("1_r3tk3")
 
 [node name="Area3D" type="Area3D" parent="."]

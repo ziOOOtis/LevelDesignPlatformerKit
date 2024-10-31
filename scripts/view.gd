@@ -43,10 +43,11 @@ func _physics_process(delta):
 # Handle input
 
 func look_at_target(_target):
-	print("look")
+	get_tree().paused = true
 	secondary_target = _target
 	look_at_player = false
 	await get_tree().create_timer(2).timeout
+	get_tree().paused = false
 	look_at_player = true
 
 func handle_input(delta):

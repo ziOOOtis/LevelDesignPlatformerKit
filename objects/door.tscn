@@ -6,7 +6,8 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_2844u"]
 size = Vector3(2, 2, 0.5)
 
-[node name="door" instance=ExtResource("1_ue8vn")]
+[node name="door" groups=["Door"] instance=ExtResource("1_ue8vn")]
+process_mode = 3
 script = ExtResource("2_lc1yq")
 
 [node name="door-rotate-large" parent="." index="0"]

@@ -50,6 +50,7 @@ environment = ExtResource("1_ahusb")
 view = NodePath("../View")
 
 [node name="View" type="Node3D" parent="." node_paths=PackedStringArray("target") groups=["View"]]
+process_mode = 3
 transform = Transform3D(0.707107, -0.298836, 0.640856, 0, 0.906308, 0.422618, -0.707107, -0.298836, 0.640856, 0, 0, 0)
 script = ExtResource("5_bg0fr")
 target = NodePath("../Player")
@@ -70,11 +71,11 @@ object_to_move = NodePath("../platform-moving")
 
 [node name="button" parent="World" node_paths=PackedStringArray("target") instance=ExtResource("17_kptnv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.67271, 1.5366, -2.23752)
-target = NodePath("../door")
+target = NodePath("../moving_object_path")
+pressed_by_default = true
 
 [node name="door" parent="World" instance=ExtResource("16_0pfo5")]
-transform = Transform3D(-0.191803, 0, 0.981434, 0, 1, 0, -0.981434, 0, -0.191803, -22.6942, 2.32365, -2.46731)
-look_at_door_when_opens = true
+transform = Transform3D(-0.0183078, -7.59716e-09, 0.999833, -8.04244e-10, 1, 7.58371e-09, -0.999833, -6.65266e-10, -0.0183078, -21.9722, 2.32365, -1.96745)
 
 [node name="player_kill_volume" parent="World" instance=ExtResource("4_mddkv")]
 
@@ -85,7 +86,7 @@ transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.98404, 1.5, -2.0873)
 
 [node name="checkpoint2" parent="World" instance=ExtResource("14_iy7eg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.6606, 2.32198, -2.22219)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.1488, 0.511129, 3.38812)
 
 [node name="platform" parent="World" instance=ExtResource("6_sdmev")]
 transform = Transform3D(0.993085, 0, -0.117399, 0, 1, 0, 0.117399, 0, 0.993085, 0, 0, 0)

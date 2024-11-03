@@ -17,7 +17,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-func _on_button_area_3d_area_entered(area: Area3D) -> void:
+func _on_button_area_3d_area_entered(_area: Area3D) -> void:
 	if not animation_player.is_playing():
 		if button_state:
 			button_state = false

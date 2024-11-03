@@ -1,0 +1,27 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://d3avl0mr4r87l"]
+
+[ext_resource type="FontFile" uid="uid://d0cxd77jybrcn" path="res://fonts/lilita_one_regular.ttf" id="1_ue1v3"]
+[ext_resource type="Texture2D" uid="uid://dm50aa4qogm65" path="res://sprites/button_rectangle_depth_gloss.png" id="2_up23b"]
+[ext_resource type="Texture2D" uid="uid://bq7c1bte7ivog" path="res://sprites/button_rectangle_gloss.png" id="3_muu02"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_km5j6"]
+texture = ExtResource("2_up23b")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c203k"]
+texture = ExtResource("3_muu02")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_agvfp"]
+texture = ExtResource("2_up23b")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jpot5"]
+texture = ExtResource("3_muu02")
+
+[resource]
+default_font = ExtResource("1_ue1v3")
+Button/constants/outline_size = 3
+Button/font_sizes/font_size = 40
+Button/fonts/font = ExtResource("1_ue1v3")
+Button/styles/focus = SubResource("StyleBoxTexture_km5j6")
+Button/styles/hover = SubResource("StyleBoxTexture_c203k")
+Button/styles/normal = SubResource("StyleBoxTexture_agvfp")
+Button/styles/pressed = SubResource("StyleBoxTexture_jpot5")

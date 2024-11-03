@@ -25,6 +25,10 @@ func _ready():
 	pass
 
 func _physics_process(delta):
+	#Close the app
+	if Input.is_action_pressed("close_app"):
+		close_app()
+	
 	if look_at_player:
 		# Set position and rotation to targets
 		
@@ -66,3 +70,6 @@ func handle_input(delta):
 	
 	zoom += Input.get_axis("zoom_in", "zoom_out") * zoom_speed * delta
 	zoom = clamp(zoom, zoom_maximum, zoom_minimum)
+
+func close_app() -> void:
+	get_tree().quit()

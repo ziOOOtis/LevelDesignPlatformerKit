@@ -6,7 +6,10 @@ extends Path3D
 @export var movement_speed : float = 1.0
 @export var is_on_from_start : bool = true
 @export var look_at_object_when_activated : bool
+@export var ping_pong : bool
+
 var original_object_pos : Vector3
+var direction : float = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,7 +20,13 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if object_to_move and is_on_from_start:
-		path_follow_3d.progress += (delta*movement_speed)
+		if ping_pong:
+			if path_follow_3d.progress_ratio > 0.99:
+				direction = -1
+			if path_follow_3d.progress_ratio < 0.01:
+				direction = 1
+
+		path_follow_3d.progress += (delta*movement_speed*direction)
 
 
 func receive_input(on : bool) -> void:

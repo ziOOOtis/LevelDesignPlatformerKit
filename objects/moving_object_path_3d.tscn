@@ -8,3 +8,4 @@ script = ExtResource("1_xasjo")
 [node name="PathFollow3D" type="PathFollow3D" parent="."]
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="PathFollow3D"]
+update_rotation = false

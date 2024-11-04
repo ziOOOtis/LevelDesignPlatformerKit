@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bunxb353h3lje"]
+
+[ext_resource type="Script" path="res://scripts/damage_dealer.gd" id="1_h7epr"]
+
+[node name="DamageDealerArea3D" type="Area3D"]
+collision_layer = 8
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_h7epr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

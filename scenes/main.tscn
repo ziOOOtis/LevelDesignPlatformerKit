@@ -1,13 +1,15 @@
-[gd_scene load_steps=28 format=3 uid="uid://bqqgyqafm7xwp"]
+[gd_scene load_steps=32 format=3 uid="uid://bqqgyqafm7xwp"]
 
 [ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_ahusb"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_onms2"]
 [ext_resource type="PackedScene" uid="uid://dhxok27jxvik8" path="res://objects/flag.tscn" id="4_els00"]
 [ext_resource type="PackedScene" uid="uid://cxea8lmw7cy1l" path="res://objects/player_kill_volume.tscn" id="4_mddkv"]
 [ext_resource type="Script" path="res://scripts/view.gd" id="5_bg0fr"]
+[ext_resource type="PackedScene" uid="uid://bprrlrsrodjse" path="res://objects/saw.tscn" id="6_ocbvf"]
 [ext_resource type="PackedScene" uid="uid://cnymdajj1vsqm" path="res://objects/platform.tscn" id="6_sdmev"]
 [ext_resource type="PackedScene" uid="uid://rjh4ifidqrfp" path="res://objects/platform_medium.tscn" id="7_ixpj3"]
 [ext_resource type="PackedScene" uid="uid://uqr4hswv6d2g" path="res://objects/platform_grass_large_round.tscn" id="8_4oh1e"]
+[ext_resource type="PackedScene" uid="uid://dppaaoqj1t6n5" path="res://objects/spike_block.tscn" id="8_6aidc"]
 [ext_resource type="PackedScene" uid="uid://c8up71en5djgm" path="res://objects/platform_falling.tscn" id="9_2fnpo"]
 [ext_resource type="PackedScene" uid="uid://dfpisimsgf5ce" path="res://objects/coin.tscn" id="10_fwhys"]
 [ext_resource type="Script" path="res://scripts/hud.gd" id="11_apvpm"]
@@ -23,6 +25,8 @@
 [ext_resource type="FontFile" uid="uid://d0cxd77jybrcn" path="res://fonts/lilita_one_regular.ttf" id="17_tk810"]
 [ext_resource type="Theme" uid="uid://d3avl0mr4r87l" path="res://themes/default_theme.tres" id="22_ntxd1"]
 [ext_resource type="Texture2D" uid="uid://dm50aa4qogm65" path="res://sprites/button_rectangle_depth_gloss.png" id="23_iywmg"]
+[ext_resource type="PackedScene" uid="uid://dwvhgrcyestak" path="res://objects/trap_spikes.tscn" id="27_g6u48"]
+[ext_resource type="PackedScene" uid="uid://dpo3dr26b06w3" path="res://objects/spike_block_wide.tscn" id="27_h58tg"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_u8ojw"]
 auto_exposure_scale = 0.75
@@ -77,6 +81,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
 curve = SubResource("Curve3D_5n82a")
 object_to_move = NodePath("../platform-moving")
 
+[node name="saw" parent="World" instance=ExtResource("6_ocbvf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.44356, 0.5, 6.32878)
+
+[node name="spike-block-wide" parent="World" instance=ExtResource("27_h58tg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.73668, 0, 6.36411)
+
+[node name="spike-block" parent="World" instance=ExtResource("8_6aidc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.18682, 0.875, 6.193)
+
+[node name="trap-spikes" parent="World" instance=ExtResource("27_g6u48")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.26464, 1.15957, 6.32124)
+
 [node name="button" parent="World" node_paths=PackedStringArray("target") instance=ExtResource("17_kptnv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.67271, 1.5366, -2.23752)
 target = NodePath("../moving_object_path")
@@ -89,9 +105,6 @@ transform = Transform3D(-0.0183078, -7.59716e-09, 0.999833, -8.04244e-10, 1, 7.5
 
 [node name="flag" parent="World" instance=ExtResource("4_els00")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 3.48077, -6)
-
-[node name="flag2" parent="World" instance=ExtResource("4_els00")]
-transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -2.41497, 0.610653, -0.4984)
 
 [node name="checkpoint" parent="World" instance=ExtResource("14_iy7eg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.98404, 1.5, -2.0873)

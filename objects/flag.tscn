@@ -6,7 +6,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_m2kcw"]
 size = Vector3(1, 1.5, 1)
 
-[node name="flag" instance=ExtResource("1_oy8jh")]
+[node name="flag" groups=["Flag"] instance=ExtResource("1_oy8jh")]
 script = ExtResource("2_mia7c")
 
 [node name="Area3D" type="Area3D" parent="." index="1"]

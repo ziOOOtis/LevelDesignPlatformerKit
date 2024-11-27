@@ -6,10 +6,10 @@
 [node name="Arch" type="Node3D"]
 
 [node name="column-rounded2" parent="." instance=ExtResource("2_qju3w")]
-transform = Transform3D(1.00292, 0, 0, 0, 1.51991, 0, 0, 0, 1.00292, -0.0124722, 0, 0.0998403)
+transform = Transform3D(1.00292, 0, 0, 0, 2.09768, 0, 0, 0, 1.00292, -0.0124722, -0.577913, 0.0998403)
 
 [node name="column-rounded3" parent="." instance=ExtResource("2_qju3w")]
-transform = Transform3D(1.00292, 0, 0, 0, 1.51991, 0, 0, 0, 1.00292, -0.0124722, 0, -1.1356)
+transform = Transform3D(1.00292, 0, 0, 0, 2.09768, 0, 0, 0, 1.00292, -0.0124722, -0.577913, -1.1356)
 
 [node name="wall-round-low2" parent="." instance=ExtResource("2_alees")]
 transform = Transform3D(-3.09034e-08, -0.279284, 3.09034e-08, 0.706987, -1.22079e-08, -0.706987, 0.706987, 0, 0.706987, 0.0703616, 1.14365, -0.517102)

@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://6b2lexiy8k4u"]
+
+[ext_resource type="PackedScene" uid="uid://b56gvebgs3gqc" path="res://models/props/block-grass-large-slope.glb" id="1_d3jin"]
+[ext_resource type="Texture2D" uid="uid://72ldk18ropuj" path="res://models/props/Textures/colormap.png" id="2_up4ur"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nbycy"]
+resource_name = "colormap"
+cull_mode = 2
+albedo_texture = ExtResource("2_up4ur")
+uv1_offset = Vector3(0.63, 0, 0)
+texture_filter = 2
+
+[node name="block-grass-large-slope2" instance=ExtResource("1_d3jin")]
+
+[node name="block-grass-large-slope" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_nbycy")

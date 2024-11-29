@@ -1,11 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://cgjrrd0b82ycg"]
+[gd_scene load_steps=5 format=3 uid="uid://cgjrrd0b82ycg"]
 
 [ext_resource type="PackedScene" uid="uid://ceddkgj3jcf3o" path="res://models/prototyping/models/column-rounded.glb" id="1_ttld5"]
+[ext_resource type="Texture2D" uid="uid://bvj25ii6y01ic" path="res://models/prototyping/models/Textures/colormap.png" id="2_sqhc7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8bmf3"]
+resource_name = "colormap"
+cull_mode = 2
+albedo_texture = ExtResource("2_sqhc7")
+texture_filter = 2
+distance_fade_mode = 1
+distance_fade_max_distance = 15.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_owm35"]
 size = Vector3(0.198578, 0.996552, 0.196777)
 
 [node name="column-rounded2" instance=ExtResource("1_ttld5")]
+
+[node name="column-rounded" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_8bmf3")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
 

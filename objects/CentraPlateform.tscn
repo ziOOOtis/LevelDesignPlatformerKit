@@ -8,6 +8,7 @@ resource_name = "colormap"
 cull_mode = 2
 albedo_texture = ExtResource("2_yli7c")
 uv1_offset = Vector3(-5.765, 0, 0)
+distance_fade_mode = 1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gnu1x"]
 size = Vector3(5, 0.5, 5)

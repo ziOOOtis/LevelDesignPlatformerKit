@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8j27k4i65pfv"]
+
+[ext_resource type="PackedScene" uid="uid://d2fiws3me3mvf" path="res://models/prototyping/models/wall-round-low.glb" id="1_g1n0n"]
+[ext_resource type="Texture2D" uid="uid://bvj25ii6y01ic" path="res://models/prototyping/models/Textures/colormap.png" id="2_a8w3e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nlj7x"]
+resource_name = "colormap"
+cull_mode = 2
+albedo_texture = ExtResource("2_a8w3e")
+texture_filter = 2
+distance_fade_max_distance = 0.5
+
+[node name="wall-round-low2" instance=ExtResource("1_g1n0n")]
+
+[node name="wall-round-low" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_nlj7x")

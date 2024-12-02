@@ -26,7 +26,7 @@ func _process(delta: float) -> void:
 		seconds += delta
 		var minutes : String
 		if (seconds / 60) > 1:
-			var minutes_int : int = seconds / 60
+			var minutes_int : int = int(seconds / 60.0)
 			minutes = str(minutes_int) + " : "
 		else:
 			minutes = ""

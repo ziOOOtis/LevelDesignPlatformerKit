@@ -1,7 +1,7 @@
 [gd_scene load_steps=43 format=3 uid="uid://d2m1icariah3o"]
 
 [ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_1dpgq"]
-[ext_resource type="Script" path="res://objects/cloudKenny.gd" id="1_g68jl"]
+[ext_resource type="Script" path="res://objects/cloud.gd" id="1_g68jl"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_2ho54"]
 [ext_resource type="Script" path="res://scripts/view.gd" id="3_b2nyd"]
 [ext_resource type="PackedScene" uid="uid://bpharv43ulngb" path="res://objects/platform_moving.tscn" id="4_ks3ec"]

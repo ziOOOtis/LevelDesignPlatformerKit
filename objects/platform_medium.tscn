@@ -11,7 +11,7 @@ resource_name = "colormap"
 cull_mode = 2
 albedo_texture = ExtResource("2_1cg04")
 distance_fade_mode = 1
-distance_fade_max_distance = 15.0
+distance_fade_max_distance = 5.0
 
 [node name="platform-medium" instance=ExtResource("1_ihbp6")]
 

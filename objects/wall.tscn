@@ -10,7 +10,7 @@ albedo_texture = ExtResource("2_37otp")
 uv1_offset = Vector3(0.5, 0, 0)
 texture_filter = 2
 distance_fade_mode = 1
-distance_fade_min_distance = 1.0
+distance_fade_max_distance = 5.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_eauqk"]
 size = Vector3(0.25, 1, 1)

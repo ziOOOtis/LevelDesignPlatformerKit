@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=4 uid="uid://gv0n8ly1nkv2"]
+[gd_scene load_steps=7 format=4 uid="uid://gv0n8ly1nkv2"]
 
+[ext_resource type="Script" path="res://objects/cloud.gd" id="1_7jyle"]
 [ext_resource type="Texture2D" uid="uid://0odt7cvj574e" path="res://models/core_models/Textures/colormap.png" id="1_niw8w"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_irp2o"]
@@ -42,10 +43,13 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_31bk6")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ca160"]
+albedo_color = Color(0.8, 0.8, 0.8, 0.988235)
 distance_fade_mode = 1
-distance_fade_min_distance = 3.0
+distance_fade_min_distance = 3.5
+distance_fade_max_distance = 15.0
 
-[node name="Node3D" type="Node3D"]
+[node name="Fogs" type="Node3D"]
+script = ExtResource("1_7jyle")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_8wy8c")

@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dd1kk8320dr4n"]
+
+[ext_resource type="PackedScene" uid="uid://bn0iedr5b0xbv" path="res://models/core_models/platform-large.glb" id="1_kqlae"]
+[ext_resource type="Texture2D" uid="uid://0odt7cvj574e" path="res://models/core_models/Textures/colormap.png" id="2_yli7c"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1eii2"]
+resource_name = "colormap"
+cull_mode = 2
+albedo_texture = ExtResource("2_yli7c")
+uv1_offset = Vector3(-5.765, 0, 0)
+distance_fade_mode = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gnu1x"]
+size = Vector3(5, 0.5, 5)
+
+[node name="platform-large" instance=ExtResource("1_kqlae")]
+
+[node name="platform-large2" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1eii2")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+shape = SubResource("BoxShape3D_gnu1x")

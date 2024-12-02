@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://8oy6pvg8fq8g"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_u4th0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ra8pj"]
+albedo_color = Color(0.593244, 0.626498, 0.699009, 1)
+distance_fade_mode = 1
+distance_fade_min_distance = 1.5
+distance_fade_max_distance = 12.0
+
+[node name="Block way" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_u4th0")
+surface_material_override/0 = SubResource("StandardMaterial3D_ra8pj")

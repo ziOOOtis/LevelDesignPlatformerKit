@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dghq2v3ui4yf"]
+
+[ext_resource type="PackedScene" uid="uid://bgix05t71t3ds" path="res://models/prototyping/models/floor-thick-corner-diagonal.glb" id="1_x8mdu"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_cm4sa"]
+data = PackedVector3Array(-0.5, 0, 0.5, 0.5, 0, 0.5, 0.5, 0, 0.3, 0.5, 0, 0.3, -0.3, 0, -0.5, -0.5, 0, 0.5, -0.3, 0, -0.5, -0.5, 0, -0.5, -0.5, 0, 0.5, 0.5, 0.2, 0.3, 0.5, 0.2, 0.5, -0.5, 0.2, 0.5, -0.5, 0.2, 0.5, -0.3, 0.2, -0.5, 0.5, 0.2, 0.3, -0.5, 0.2, 0.5, -0.5, 0.2, -0.5, -0.3, 0.2, -0.5, -0.5, 0.2, -0.5, -0.5, 0, -0.5, -0.3, 0, -0.5, -0.3, 0, -0.5, -0.3, 0.2, -0.5, -0.5, 0.2, -0.5, -0.5, 0, 0.5, -0.5, 0, -0.5, -0.5, 0.2, -0.5, -0.5, 0.2, -0.5, -0.5, 0.2, 0.5, -0.5, 0, 0.5, 0.5, 0.2, 0.5, 0.5, 0, 0.5, -0.5, 0, 0.5, -0.5, 0, 0.5, -0.5, 0.2, 0.5, 0.5, 0.2, 0.5, 0.5, 0.2, 0.5, 0.5, 0.2, 0.3, 0.5, 0, 0.3, 0.5, 0, 0.3, 0.5, 0, 0.5, 0.5, 0.2, 0.5, -0.3, 0.2, -0.5, -0.3, 0, -0.5, 0.5, 0, 0.3, 0.5, 0, 0.3, 0.5, 0.2, 0.3, -0.3, 0.2, -0.5)
+
+[node name="floor-thick-corner-diagonal2" instance=ExtResource("1_x8mdu")]
+
+[node name="floor-thick-corner-diagonal" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.501974, 0, -0.507178)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.501974, 0, -0.507178)
+shape = SubResource("ConcavePolygonShape3D_cm4sa")

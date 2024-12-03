@@ -11,6 +11,9 @@ size = Vector3(2, 0.75, 0.75)
 
 [node name="spike-block-wide" instance=ExtResource("1_5lq27")]
 
+[node name="spike-block-wide" parent="." index="0"]
+layers = 1024
+
 [node name="DamageDealerArea3D" parent="." index="1" instance=ExtResource("2_lgsom")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
@@ -19,6 +22,7 @@ shape = SubResource("BoxShape3D_51hsx")
 
 [node name="AnimatableBody3D" type="AnimatableBody3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+collision_mask = 2
 sync_to_physics = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D" index="0"]

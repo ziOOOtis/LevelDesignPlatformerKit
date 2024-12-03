@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://e6jwbml72r4o"]
+[gd_scene load_steps=33 format=3 uid="uid://e6jwbml72r4o"]
 
 [ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_apxki"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_hgw2l"]
@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://c8up71en5djgm" path="res://objects/platform_falling.tscn" id="18_x8jhr"]
 [ext_resource type="PackedScene" uid="uid://uqr4hswv6d2g" path="res://objects/platform_grass_large_round.tscn" id="19_qait6"]
 [ext_resource type="PackedScene" uid="uid://dfpisimsgf5ce" path="res://objects/coin.tscn" id="20_lfsn4"]
-[ext_resource type="PackedScene" uid="uid://dy017k58p20sk" path="res://objects/cloud.tscn" id="21_dryjk"]
+[ext_resource type="PackedScene" uid="uid://dy017k58p20sk" path="res://objects/cloudKenny.tscn" id="21_dryjk"]
 [ext_resource type="Script" path="res://scripts/hud.gd" id="22_1dx8f"]
 [ext_resource type="Texture2D" uid="uid://cd7oyc56ehkx1" path="res://sprites/coin.png" id="23_324j0"]
 [ext_resource type="LabelSettings" uid="uid://daohhjonjrdx8" path="res://themes/label_settings.tres" id="24_6hsja"]
@@ -36,6 +36,20 @@ _data = {
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_g1pd4"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -5.83677, 1.85731, 1.13776),
+"tilts": PackedFloat32Array(0)
+}
+point_count = 1
+
+[sub_resource type="Curve3D" id="Curve3D_ox8jk"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0),
+"tilts": PackedFloat32Array(0)
+}
+point_count = 1
 
 [sub_resource type="LabelSettings" id="LabelSettings_ri8jt"]
 font = ExtResource("25_vfu23")
@@ -152,6 +166,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.9883, 2.20613, -5.4)
 
 [node name="platform-medium" parent="World" instance=ExtResource("17_qgsha")]
 transform = Transform3D(0.86084, 0, -0.508876, 0, 1, 0, 0.508876, 0, 0.86084, -5.83677, 1.85731, 1.13776)
+
+[node name="moving_object_path2" parent="World" node_paths=PackedStringArray("object_to_move") instance=ExtResource("6_fuduw")]
+curve = SubResource("Curve3D_g1pd4")
+object_to_move = NodePath("../platform-medium")
+is_on_from_start = false
+look_at_object_when_activated = true
+
+[node name="moving_object_path3" parent="World" node_paths=PackedStringArray("object_to_move") instance=ExtResource("6_fuduw")]
+curve = SubResource("Curve3D_ox8jk")
+object_to_move = NodePath("../platform-medium")
+look_at_object_when_activated = true
 
 [node name="platform-medium2" parent="World" instance=ExtResource("17_qgsha")]
 transform = Transform3D(0.997325, 0, 0.073099, 0, 1, 0, -0.073099, 0, 0.997325, -20.3597, 4.41057, 6.41009)
@@ -313,6 +338,17 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -30.5423, 2.65714, 0.622322)
 
 [node name="wall2" parent="." instance=ExtResource("25_ow4b3")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -30.5423, 2.65714, -3.41335)
+
+[node name="door" parent="." instance=ExtResource("13_2py5d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.12795, 1.4514, 2.85652)
+
+[node name="button" parent="." node_paths=PackedStringArray("target") instance=ExtResource("12_kk8bf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.57635, 7)
+target = NodePath("../World/moving_object_path2")
+
+[node name="button2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("12_kk8bf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.57635, 7)
+target = NodePath("../World/moving_object_path3")
 
 [connection signal="coin_collected" from="Player" to="HUD" method="_on_coin_collected"]
 [connection signal="reached_goal" from="Player" to="HUD" method="_on_player_reached_goal"]

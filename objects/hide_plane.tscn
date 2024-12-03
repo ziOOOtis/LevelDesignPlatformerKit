@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bc402fj124pkd"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vtqa3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rhxp1"]
+albedo_color = Color(0.29219, 0.29219, 0.29219, 1)
+
+[node name="HidePlane" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(14.8041, 0, 0, 0, 2.12852, 0, 0, 0, 14.0756, 0, 0, 0)
+mesh = SubResource("PlaneMesh_vtqa3")
+surface_material_override/0 = SubResource("StandardMaterial3D_rhxp1")

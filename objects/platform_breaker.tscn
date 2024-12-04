@@ -1,12 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0xklollye5y0"]
+[gd_scene load_steps=9 format=3 uid="uid://c0xklollye5y0"]
 
 [ext_resource type="PackedScene" uid="uid://bpharv43ulngb" path="res://objects/platform_moving.tscn" id="1_o5yyt"]
 [ext_resource type="Texture2D" uid="uid://72ldk18ropuj" path="res://models/props/Textures/colormap.png" id="2_k8kj5"]
 [ext_resource type="PackedScene" uid="uid://dppaaoqj1t6n5" path="res://objects/spike_block.tscn" id="3_i6gcq"]
+[ext_resource type="ArrayMesh" uid="uid://deu06eho4c74" path="res://vfx_meshes/dust.res" id="4_kjtjt"]
+[ext_resource type="PackedScene" uid="uid://b5qs53andvf8c" path="res://models/props/trap-spikes-large.glb" id="5_3a1fa"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1naf4"]
 albedo_texture = ExtResource("2_k8kj5")
 uv1_offset = Vector3(2.775, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0atx7"]
+diffuse_mode = 2
+specular_mode = 2
+metallic_specular = 0.0
+backlight = Color(0, 0.521569, 0.709804, 1)
+billboard_keep_scale = true
+grow_amount = 1.882
+proximity_fade_distance = 0.25
+
+[sub_resource type="Curve" id="Curve_mevmn"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.249284, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [node name="platformBreaker" instance=ExtResource("1_o5yyt")]
 
@@ -24,3 +39,34 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.801535, 0.0417368, -0.7833
 
 [node name="spike-block4" parent="." index="5" instance=ExtResource("3_i6gcq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.883487, 0.0417368, -0.797358)
+
+[node name="ParticlesTrail" type="CPUParticles3D" parent="." index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+material_override = SubResource("StandardMaterial3D_0atx7")
+cast_shadow = 0
+amount = 60
+mesh = ExtResource("4_kjtjt")
+emission_shape = 1
+emission_sphere_radius = 0.2
+particle_flag_align_y = true
+direction = Vector3(0, 0, 0)
+gravity = Vector3(0, 0.1, 0)
+scale_amount_min = 0.75
+scale_amount_curve = SubResource("Curve_mevmn")
+
+[node name="ParticlesTrail2" type="CPUParticles3D" parent="." index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.92737, 0, 0)
+material_override = SubResource("StandardMaterial3D_0atx7")
+cast_shadow = 0
+amount = 60
+mesh = ExtResource("4_kjtjt")
+emission_shape = 1
+emission_sphere_radius = 0.2
+particle_flag_align_y = true
+direction = Vector3(0, 0, 0)
+gravity = Vector3(0, 0.1, 0)
+scale_amount_min = 0.75
+scale_amount_curve = SubResource("Curve_mevmn")
+
+[node name="trap-spikes-large2" parent="." index="8" instance=ExtResource("5_3a1fa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00966531, 0.5, -0.0410473)

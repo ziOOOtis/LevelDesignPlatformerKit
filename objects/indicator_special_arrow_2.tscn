@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://508yhtjopopx"]
+
+[ext_resource type="PackedScene" uid="uid://bwpugiaevsa66" path="res://models/prototyping/models/indicator-special-arrow.glb" id="1_aig3l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s4s6u"]
+albedo_color = Color(0.329412, 0.85098, 0, 1)
+
+[node name="indicator-special-arrow2" instance=ExtResource("1_aig3l")]
+
+[node name="indicator-special-arrow" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_s4s6u")

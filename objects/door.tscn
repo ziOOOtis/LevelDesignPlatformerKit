@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://0v6t454aaexr"]
+[gd_scene load_steps=5 format=3 uid="uid://0v6t454aaexr"]
 
 [ext_resource type="PackedScene" uid="uid://ctsyh8fjntx7y" path="res://models/props/door-rotate-large.glb" id="1_ue8vn"]
 [ext_resource type="Script" path="res://scripts/door.gd" id="2_lc1yq"]
+[ext_resource type="PackedScene" uid="uid://dwvhgrcyestak" path="res://objects/trap_spikes.tscn" id="3_lve2n"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2844u"]
 size = Vector3(2, 2, 0.5)
@@ -21,3 +22,12 @@ transform = Transform3D(1, 0, -3.87541e-16, 0, 1, 0, 3.87541e-16, 0, 1, -0.3, 3.
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_2844u")
+
+[node name="trap-spikes" parent="." index="3" instance=ExtResource("3_lve2n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00391281, 1.92778, -0.0562979)
+
+[node name="trap-spikes3" parent="." index="4" instance=ExtResource("3_lve2n")]
+transform = Transform3D(0.845467, -0.534028, 0, 0.534028, 0.845467, 0, 0, 0, 1, -0.665959, 1.78106, -0.0562979)
+
+[node name="trap-spikes2" parent="." index="5" instance=ExtResource("3_lve2n")]
+transform = Transform3D(0.828178, 0.560466, 0, -0.560466, 0.828178, 0, 0, 0, 1, 0.66756, 1.71518, -0.0562979)

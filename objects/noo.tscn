@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://pwkx23swhqe2"]
+
+[ext_resource type="PackedScene" uid="uid://dyk1n5hugdxe7" path="res://models/prototyping/models/indicator-special-cross.glb" id="1_q2mpl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_18j8s"]
+albedo_color = Color(1, 0.133333, 0, 1)
+
+[node name="Noo" instance=ExtResource("1_q2mpl")]
+
+[node name="indicator-special-cross" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_18j8s")

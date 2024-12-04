@@ -25,7 +25,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 collision_mask = 2
 sync_to_physics = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D" index="0"]
+[node name="animation_CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D" index="0"]
 shape = SubResource("BoxShape3D_wdfqi")
 
 [editable path="DamageDealerArea3D"]

@@ -2,8 +2,8 @@ extends Node3D
 
 @export var respawn : bool = true
 @export var respawn_delay : float = 2.0
-@onready var platform_falling_collision_shape_3d: CollisionShape3D = %"platform-falling_collisionShape3D"
-@onready var platform_falling_2: MeshInstance3D = $"platform-falling2"
+@onready var platform_falling_collision_shape_3d: CollisionShape3D = %"DamageDealerArea3D"
+@onready var platform_falling_2: MeshInstance3D = $"spike-block-wide"
 @onready var falling_platform_animation_player: AnimationPlayer = $FallingPlatformAnimationPlayer
 
 var falling := false
@@ -34,7 +34,8 @@ func _process(delta):
 
 	if falling:
 		gravity += 0.25
-
+	else:
+		global_position = starting_pos
 
 func restore_platform() -> void:
 	global_position = starting_pos

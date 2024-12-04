@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cwy8wd3ial51i"]
+
+[node name="Light" type="Node3D"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(1, 0.615686, 0.172549, 1)
+light_energy = 4.905
+light_volumetric_fog_energy = 4.048
+light_size = 0.095

@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dl2ed4gkybggf"]
+[gd_scene load_steps=12 format=3 uid="uid://dl2ed4gkybggf"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ffboj"]
 [ext_resource type="PackedScene" uid="uid://c0e27836xgmhi" path="res://objects/character.tscn" id="2_nero3"]
 [ext_resource type="Texture2D" uid="uid://8ggihh27mlrr" path="res://sprites/blob_shadow.png" id="3_0c7wt"]
+[ext_resource type="PackedScene" uid="uid://dk1inne27lf4o" path="res://models/prototyping/models/hat-cap.glb" id="3_whnsp"]
+[ext_resource type="PackedScene" uid="uid://dga6mkag8nwjj" path="res://models/prototyping/models/number-double-3.glb" id="4_ewvak"]
 [ext_resource type="ArrayMesh" uid="uid://deu06eho4c74" path="res://vfx_meshes/dust.res" id="4_mvhqy"]
 [ext_resource type="AudioStream" uid="uid://cydjn1ct3hps2" path="res://sounds/walking.ogg" id="5_ics1s"]
 
@@ -38,20 +40,11 @@ shape = SubResource("CapsuleShape3D_gdq8c")
 
 [node name="Character" parent="." instance=ExtResource("2_nero3")]
 
-[node name="leg-left" parent="Character/character/root" index="0"]
-transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 0.125, 0.17625, -0.02375)
+[node name="hat-cap2" parent="Character/character/root/torso" index="3" instance=ExtResource("3_whnsp")]
+transform = Transform3D(-0.118619, 0, 2.79749, -0.419868, 2.76829, -0.0178032, -2.7658, -0.420245, -0.117275, -0.00344849, 0.416666, 0.0583107)
 
-[node name="leg-right" parent="Character/character/root" index="1"]
-transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -0.125, 0.17625, -0.02375)
-
-[node name="torso" parent="Character/character/root" index="2"]
-transform = Transform3D(1, 0, 0, 0, 0.996194, 0.0871557, 0, -0.0871557, 0.996194, -1.80478e-15, 0.17625, -0.02375)
-
-[node name="arm-left" parent="Character/character/root/torso" index="0"]
-transform = Transform3D(0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0, 1, 0.3, 0.175, 0)
-
-[node name="arm-right" parent="Character/character/root/torso" index="1"]
-transform = Transform3D(0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0, 1, -0.3, 0.1195, 0)
+[node name="number-double-32" parent="Character/character/root/torso/hat-cap2" instance=ExtResource("4_ewvak")]
+transform = Transform3D(0.194542, 0.0464064, -0.000231453, -0.0464064, 0.194532, -0.00196772, -0.000231453, 0.00196772, 0.19999, -0.101583, 0.057751, -0.0043073)
 
 [node name="ButtonPresserArea3D" type="Area3D" parent="Character"]
 collision_layer = 4

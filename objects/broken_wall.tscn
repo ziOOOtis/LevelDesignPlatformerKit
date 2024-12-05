@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://mv5rjkq1smy8"]
+
+[ext_resource type="PackedScene" uid="uid://dydrb0uov4lh" path="res://objects/wall_window_cutout_small_2.tscn" id="2_hpfyh"]
+[ext_resource type="PackedScene" uid="uid://c0n2315wnksre" path="res://models/prototyping/models/shape-cube-half.glb" id="2_ru826"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cfau2"]
+size = Vector3(0.201599, 2.09833, 1)
+
+[node name="brokenWall" type="Node3D"]
+
+[node name="shape-cube-half2" parent="." instance=ExtResource("2_ru826")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 1.98884, -0.322215)
+
+[node name="shape-cube-half3" parent="." instance=ExtResource("2_ru826")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 1.98884, -0.0137115)
+
+[node name="shape-cube-half4" parent="." instance=ExtResource("2_ru826")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 1.98884, 0.308504)
+
+[node name="wall-window-cutout-small2" parent="." instance=ExtResource("2_hpfyh")]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.15527e-05, 1.05392, 0)
+shape = SubResource("BoxShape3D_cfau2")

@@ -8,7 +8,8 @@ resource_name = "colormap"
 cull_mode = 2
 albedo_texture = ExtResource("2_a8w3e")
 texture_filter = 2
-distance_fade_max_distance = 0.5
+distance_fade_mode = 2
+distance_fade_max_distance = 5.0
 
 [node name="wall-round-low2" instance=ExtResource("1_g1n0n")]
 

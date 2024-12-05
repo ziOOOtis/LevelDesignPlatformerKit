@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dydrb0uov4lh"]
+
+[ext_resource type="PackedScene" uid="uid://bxlej7mgq0s3u" path="res://models/prototyping/models/wall-window-cutout-small.glb" id="1_r6s3n"]
+[ext_resource type="Texture2D" uid="uid://bvj25ii6y01ic" path="res://models/prototyping/models/Textures/colormap.png" id="2_4y2xi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_27vh1"]
+resource_name = "colormap"
+cull_mode = 2
+albedo_texture = ExtResource("2_4y2xi")
+texture_filter = 2
+distance_fade_mode = 2
+
+[node name="wall-window-cutout-small2" instance=ExtResource("1_r6s3n")]
+
+[node name="wall-window-cutout-small" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_27vh1")

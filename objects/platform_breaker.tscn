@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://c0xklollye5y0"]
+[gd_scene load_steps=8 format=3 uid="uid://c0xklollye5y0"]
 
 [ext_resource type="PackedScene" uid="uid://bpharv43ulngb" path="res://objects/platform_moving.tscn" id="1_o5yyt"]
 [ext_resource type="Texture2D" uid="uid://72ldk18ropuj" path="res://models/props/Textures/colormap.png" id="2_k8kj5"]
 [ext_resource type="PackedScene" uid="uid://dppaaoqj1t6n5" path="res://objects/spike_block.tscn" id="3_i6gcq"]
 [ext_resource type="ArrayMesh" uid="uid://deu06eho4c74" path="res://vfx_meshes/dust.res" id="4_kjtjt"]
-[ext_resource type="PackedScene" uid="uid://b5qs53andvf8c" path="res://models/props/trap-spikes-large.glb" id="5_3a1fa"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1naf4"]
 albedo_texture = ExtResource("2_k8kj5")
@@ -31,16 +30,19 @@ surface_material_override/0 = SubResource("StandardMaterial3D_1naf4")
 [node name="spike-block" parent="." index="2" instance=ExtResource("3_i6gcq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.813278, 0.0417368, 0.775331)
 
-[node name="spike-block2" parent="." index="3" instance=ExtResource("3_i6gcq")]
+[node name="spike-block5" parent="." index="3" instance=ExtResource("3_i6gcq")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.00245875, -0.250635, -0.0404053)
+
+[node name="spike-block2" parent="." index="4" instance=ExtResource("3_i6gcq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.815577, 0.0417368, 0.761289)
 
-[node name="spike-block3" parent="." index="4" instance=ExtResource("3_i6gcq")]
+[node name="spike-block3" parent="." index="5" instance=ExtResource("3_i6gcq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.801535, 0.0417368, -0.783316)
 
-[node name="spike-block4" parent="." index="5" instance=ExtResource("3_i6gcq")]
+[node name="spike-block4" parent="." index="6" instance=ExtResource("3_i6gcq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.883487, 0.0417368, -0.797358)
 
-[node name="ParticlesTrail" type="CPUParticles3D" parent="." index="6"]
+[node name="ParticlesTrail" type="CPUParticles3D" parent="." index="7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 material_override = SubResource("StandardMaterial3D_0atx7")
 cast_shadow = 0
@@ -54,7 +56,7 @@ gravity = Vector3(0, 0.1, 0)
 scale_amount_min = 0.75
 scale_amount_curve = SubResource("Curve_mevmn")
 
-[node name="ParticlesTrail2" type="CPUParticles3D" parent="." index="7"]
+[node name="ParticlesTrail2" type="CPUParticles3D" parent="." index="8"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.92737, 0, 0)
 material_override = SubResource("StandardMaterial3D_0atx7")
 cast_shadow = 0
@@ -67,6 +69,3 @@ direction = Vector3(0, 0, 0)
 gravity = Vector3(0, 0.1, 0)
 scale_amount_min = 0.75
 scale_amount_curve = SubResource("Curve_mevmn")
-
-[node name="trap-spikes-large2" parent="." index="8" instance=ExtResource("5_3a1fa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00966531, 0.5, -0.0410473)

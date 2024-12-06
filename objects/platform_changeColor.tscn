@@ -18,6 +18,7 @@ distance_fade_max_distance = 15.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ahwl4"]
 albedo_color = Color(1, 0.203821, 0.226479, 1)
+distance_fade_mode = 2
 
 [node name="platform" instance=ExtResource("1_sktg5")]
 

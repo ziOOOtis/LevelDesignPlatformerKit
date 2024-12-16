@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ojdai2qvsijt"]
+
+[ext_resource type="PackedScene" uid="uid://duf6tmubs17m3" path="res://models/props/sign.glb" id="1_476rm"]
+[ext_resource type="FontFile" uid="uid://cga1b4n61r1y4" path="res://fonts/KiriFont.ttf" id="2_0ilqn"]
+
+[node name="sign_note" instance=ExtResource("1_476rm")]
+
+[node name="Label3D" type="Label3D" parent="." index="1"]
+transform = Transform3D(0.999563, 0, -0.0295616, 0, 1, 0, 0.0295616, 0, 0.999563, 0, 0.394863, 0.081206)
+modulate = Color(1, 1, 0.513726, 1)
+outline_modulate = Color(0.858824, 0.482353, 0, 1)
+text = "FIX 
+BRIDGE"
+font = ExtResource("2_0ilqn")
+font_size = 21

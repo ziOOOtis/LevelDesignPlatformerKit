@@ -9,7 +9,7 @@ cull_mode = 2
 albedo_texture = ExtResource("2_37otp")
 texture_filter = 2
 distance_fade_mode = 3
-distance_fade_max_distance = 15.0
+distance_fade_max_distance = 8.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_eauqk"]
 size = Vector3(0.199463, 1, 1)

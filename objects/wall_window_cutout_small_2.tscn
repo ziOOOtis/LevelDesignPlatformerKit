@@ -9,6 +9,7 @@ cull_mode = 2
 albedo_texture = ExtResource("2_4y2xi")
 texture_filter = 2
 distance_fade_mode = 2
+distance_fade_max_distance = 8.0
 
 [node name="wall-window-cutout-small2" instance=ExtResource("1_r6s3n")]
 

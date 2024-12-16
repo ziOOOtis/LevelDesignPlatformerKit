@@ -29,6 +29,6 @@ shape = SubResource("ConcavePolygonShape3D_gwolp")
 surface_material_override/0 = SubResource("StandardMaterial3D_w8ji8")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." index="2"]
-transform = Transform3D(2.97648, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.512649, 0)
+transform = Transform3D(2.97648, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.52, 0)
 mesh = SubResource("QuadMesh_wsps1")
 surface_material_override/0 = SubResource("StandardMaterial3D_jl7mc")

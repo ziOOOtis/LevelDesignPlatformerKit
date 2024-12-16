@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dl4qtwxux3ntr"]
+
+[ext_resource type="PackedScene" uid="uid://cm85msq8ax8s8" path="res://models/castle_model/siege-tower-demolished.glb" id="1_xlfhn"]
+[ext_resource type="Texture2D" uid="uid://cuyncjo4aiwh2" path="res://models/castle_model/Textures/colormap.png" id="2_2i5qg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v7ieh"]
+resource_name = "colormap"
+cull_mode = 2
+albedo_texture = ExtResource("2_2i5qg")
+uv1_offset = Vector3(0.105, 0, 0)
+texture_filter = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cagot"]
+size = Vector3(0.85553, 1.67157, 0.828247)
+
+[node name="siege-tower-demolished2" instance=ExtResource("1_xlfhn")]
+
+[node name="siege-tower-demolished" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_v7ieh")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0399475, 0.832855, -0.027771)
+shape = SubResource("BoxShape3D_cagot")

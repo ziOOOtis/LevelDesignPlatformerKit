@@ -44,7 +44,7 @@ shape = SubResource("CapsuleShape3D_gdq8c")
 transform = Transform3D(-0.118619, 0, 2.79749, -0.419868, 2.76829, -0.0178032, -2.7658, -0.420245, -0.117275, -0.00344849, 0.416666, 0.0583107)
 
 [node name="number-double-32" parent="Character/character/root/torso/hat-cap2" instance=ExtResource("4_ewvak")]
-transform = Transform3D(0.194542, 0.0464064, -0.000231453, -0.0464064, 0.194532, -0.00196772, -0.000231453, 0.00196772, 0.19999, -0.101583, 0.057751, -0.0043073)
+transform = Transform3D(0.197369, -0.00228024, 0.0322571, -0.0322453, 0.00119091, 0.19738, -0.00244244, -0.199984, 0.000807607, -0.0972016, 0.100982, 0.0525501)
 
 [node name="ButtonPresserArea3D" type="Area3D" parent="Character"]
 collision_layer = 4

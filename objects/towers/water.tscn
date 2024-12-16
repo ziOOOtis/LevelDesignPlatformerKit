@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://wru2p08yjh2m"]
+
+[ext_resource type="Texture2D" uid="uid://bdmjtbfxxnu8u" path="res://objects/towers/pattern_25.png" id="1_8f7wo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jgdnl"]
+transparency = 4
+albedo_color = Color(1.54018e-06, 0.576425, 0.876021, 0.690196)
+metallic = 1.0
+metallic_texture = ExtResource("1_8f7wo")
+emission_enabled = true
+emission = Color(0, 2.11775e-06, 0.961455, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_86udo"]
+material = SubResource("StandardMaterial3D_jgdnl")
+size = Vector2(150, 150)
+subdivide_width = 200
+subdivide_depth = 200
+orientation = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_akvo1"]
+material = SubResource("StandardMaterial3D_jgdnl")
+size = Vector3(80, 5, 80)
+
+[node name="water" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_86udo")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.21238, 0)
+mesh = SubResource("BoxMesh_akvo1")

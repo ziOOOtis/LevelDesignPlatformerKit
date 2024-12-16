@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://clyk1wojmqxjw"]
+
+[ext_resource type="AudioStream" uid="uid://cko3em7xury11" path="res://sounds/fall.ogg" id="1_5cu8o"]
+
+[node name="falling_Sound" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_5cu8o")

@@ -1,62 +1,110 @@
-[gd_scene load_steps=7 format=3 uid="uid://nc0yoqf4jy2p"]
+[gd_scene load_steps=9 format=3 uid="uid://nc0yoqf4jy2p"]
 
-[ext_resource type="PackedScene" uid="uid://dhxok27jxvik8" path="res://objects/flag.tscn" id="1_wwcbg"]
-[ext_resource type="PackedScene" uid="uid://cwy8wd3ial51i" path="res://objects/light.tscn" id="2_bmhme"]
-[ext_resource type="PackedScene" uid="uid://uqr4hswv6d2g" path="res://objects/platform_grass_large_round.tscn" id="3_ly5h6"]
-[ext_resource type="PackedScene" uid="uid://dlst3fxcqusuq" path="res://models/props/tree.glb" id="4_k4grn"]
 [ext_resource type="PackedScene" uid="uid://bqynmf1spp8g4" path="res://objects/towers/CentraPlateform.tscn" id="5_asqlc"]
-[ext_resource type="PackedScene" uid="uid://22df6b88igs0" path="res://objects/arch_t.tscn" id="6_1ycyy"]
+[ext_resource type="PackedScene" uid="uid://c05asd8wtdkab" path="res://models/castle_model/tower-square-top-roof-high-windows.glb" id="5_oqa8q"]
+[ext_resource type="PackedScene" uid="uid://wc4ej7b6mlsw" path="res://objects/towers/tower_square_base_border_2.tscn" id="6_d6rsx"]
+[ext_resource type="PackedScene" uid="uid://cmu8of2el4bg7" path="res://models/castle_model/tower-square-mid-door.glb" id="6_em715"]
+[ext_resource type="PackedScene" uid="uid://w2k7sgtain2i" path="res://models/castle_model/tower-square-arch.glb" id="7_h4qa8"]
+[ext_resource type="PackedScene" uid="uid://d1vumncg8ewwx" path="res://models/castle_model/tower-square-mid-windows.glb" id="7_iogkj"]
+[ext_resource type="PackedScene" uid="uid://xwjfxsvi4je2" path="res://models/castle_model/tower-square-top-roof-rounded.glb" id="7_ln4pe"]
+[ext_resource type="PackedScene" uid="uid://csrtbx82vwa5m" path="res://models/castle_model/tower-square-top.glb" id="10_hiy27"]
 
 [node name="Ending_tower" type="Node3D"]
 
-[node name="back" type="Node3D" parent="."]
+[node name="tower" type="Node3D" parent="."]
 
-[node name="flag" parent="back" instance=ExtResource("1_wwcbg")]
-transform = Transform3D(2.40532, 0, 1.79288, 0, 3, 0, -1.79288, 0, 2.40532, 0.67787, 4.58734, -1.48115)
+[node name="tower-square-top-roof-high-windows2" parent="tower" instance=ExtResource("5_oqa8q")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.00088644, 5.6614, -0.0931981)
 
-[node name="Light" parent="back" instance=ExtResource("2_bmhme")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.567568, 5.97631, 0.0238943)
+[node name="tower-square-base-border2" parent="tower" instance=ExtResource("6_d6rsx")]
+transform = Transform3D(3.6, 0, 0, 0, 1.8, 0, 0, 0, 3.6, -0.0617833, -4.32771, -0.0604867)
 
-[node name="platform-grass-large-round" parent="back" instance=ExtResource("3_ly5h6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.223131, -0.625468, -0.368996)
+[node name="tower-square-arch2" parent="tower" instance=ExtResource("7_h4qa8")]
+transform = Transform3D(2.4, 0, 0, 0, 2.4, 0, 0, 0, 2.4, -0.0498894, 1.53253, -0.0448344)
 
-[node name="platform-grass-large-round2" parent="back" instance=ExtResource("3_ly5h6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.23283, -1.19964, 0.971879)
+[node name="tower-square-arch8" parent="tower" instance=ExtResource("7_h4qa8")]
+transform = Transform3D(2.4, 0, 0, 0, 2.4, 0, 0, 0, 2.4, 1.93904, 1.06434, -0.0448344)
 
-[node name="platform-grass-large-round3" parent="back" instance=ExtResource("3_ly5h6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.93547, -0.860768, -1.61922)
+[node name="tower-square-arch9" parent="tower" instance=ExtResource("7_h4qa8")]
+transform = Transform3D(2.4, 0, 0, 0, 2.4, 0, 0, 0, 2.4, -2.11992, 1.06434, -0.0448344)
 
-[node name="tree10" parent="back" instance=ExtResource("4_k4grn")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 3.40337, -0.331759, -2.66796)
+[node name="tower-square-arch3" parent="tower" instance=ExtResource("7_h4qa8")]
+transform = Transform3D(3.2, 0, 0, 0, 3.2, 0, 0, 0, 3.2, -0.0498894, -2.78728, 2.88378)
 
-[node name="tree11" parent="back" instance=ExtResource("4_k4grn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.32387, -0.331759, -1.53189)
+[node name="tower-square-arch5" parent="tower" instance=ExtResource("7_h4qa8")]
+transform = Transform3D(3.2, 0, 0, 0, 3.2, 0, 0, 0, 3.2, -0.0498894, -2.78728, -3.11622)
 
-[node name="tree12" parent="back" instance=ExtResource("4_k4grn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.80157, -0.331759, -2.52421)
+[node name="tower-square-arch4" parent="tower" instance=ExtResource("7_h4qa8")]
+transform = Transform3D(3.2, 0, 0, 0, 3.2, 0, 0, 0, 3.2, -0.0498894, -2.78728, -0.116223)
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="tower-square-arch6" parent="tower" instance=ExtResource("7_h4qa8")]
+transform = Transform3D(3.2, 0, 0, 0, 3.2, 0, 0, 0, 3.2, 2.95011, -2.78728, -0.116223)
 
-[node name="tower-square-base-color2" parent="Node3D" instance=ExtResource("5_asqlc")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -1.01184, -0.230434, -1.23998)
+[node name="tower-square-arch7" parent="tower" instance=ExtResource("7_h4qa8")]
+transform = Transform3D(3.2, 0, 0, 0, 3.2, 0, 0, 0, 3.2, -3.04989, -2.78728, -0.116223)
 
-[node name="tower-square-base-color3" parent="Node3D" instance=ExtResource("5_asqlc")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -1.01184, -0.230434, 0.0018068)
+[node name="tower-square-base-color2" parent="tower" instance=ExtResource("5_asqlc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.906989, 0.543751, -0.922493)
 
-[node name="tower-square-base-color4" parent="Node3D" instance=ExtResource("5_asqlc")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.215758, -0.230434, -1.23998)
+[node name="tower-square-base-color3" parent="tower" instance=ExtResource("5_asqlc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.906989, 0.543751, 0.779091)
 
-[node name="tower-square-base-color5" parent="Node3D" instance=ExtResource("5_asqlc")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.215758, -0.230434, 0.0018068)
+[node name="tower-square-base-color4" parent="tower" instance=ExtResource("5_asqlc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.865989, 0.543751, -0.922493)
 
-[node name="Arch" parent="Node3D" instance=ExtResource("6_1ycyy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.01318, 0.567944, -0.110033)
+[node name="tower-square-base-color5" parent="tower" instance=ExtResource("5_asqlc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.865989, 0.543751, 0.779091)
 
-[node name="Arch4" parent="Node3D" instance=ExtResource("6_1ycyy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.225284, 0.567944, -0.110033)
+[node name="tower-square-base-color6" parent="tower" instance=ExtResource("5_asqlc")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 1.24081, -3.86557, 3.90317)
 
-[node name="Arch2" parent="Node3D" instance=ExtResource("6_1ycyy")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.920841, 0.567944, -0.012259)
+[node name="tower-square-base-color8" parent="tower" instance=ExtResource("5_asqlc")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 1.24081, -3.86557, 1.41128)
 
-[node name="Arch3" parent="Node3D" instance=ExtResource("6_1ycyy")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.920841, 0.567944, -1.25616)
+[node name="tower-square-base-color9" parent="tower" instance=ExtResource("5_asqlc")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 4.19511, -3.86557, 1.41128)
+
+[node name="tower-square-base-color10" parent="tower" instance=ExtResource("5_asqlc")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 4.19511, -3.86557, -1.41457)
+
+[node name="tower-square-base-color11" parent="tower" instance=ExtResource("5_asqlc")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -4.30814, -3.86557, 1.41128)
+
+[node name="tower-square-base-color12" parent="tower" instance=ExtResource("5_asqlc")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -4.30814, -3.86557, -1.41457)
+
+[node name="tower-square-base-color7" parent="tower" instance=ExtResource("5_asqlc")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -1.30302, -3.86557, 3.90317)
+
+[node name="tower-square-base-color13" parent="tower" instance=ExtResource("5_asqlc")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 1.24081, -3.86557, -4.42026)
+
+[node name="tower-square-base-color14" parent="tower" instance=ExtResource("5_asqlc")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -1.30302, -3.86557, -4.42026)
+
+[node name="tower-square-top2" parent="tower" instance=ExtResource("10_hiy27")]
+transform = Transform3D(2.4, 0, 0, 0, 2.4, 0, 0, 0, 2.4, -0.018765, 3.68853, -0.0877626)
+
+[node name="tower-square-top3" parent="tower" instance=ExtResource("10_hiy27")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.018765, 0.368931, 2.77885)
+
+[node name="tower-square-top4" parent="tower" instance=ExtResource("10_hiy27")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.018765, 0.368931, -3.22115)
+
+[node name="tower-square-top5" parent="tower" instance=ExtResource("10_hiy27")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -2.97307, 0.368931, -0.00995588)
+
+[node name="tower-square-top6" parent="tower" instance=ExtResource("10_hiy27")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 2.96123, 0.368931, -0.00995588)
+
+[node name="tower-square-mid-door2" parent="tower" instance=ExtResource("6_em715")]
+transform = Transform3D(-1.04907e-07, 0, 2.4, 0, 2.4, 0, -2.4, 0, -1.04907e-07, 0.0146241, 0.923525, -0.159022)
+
+[node name="tower-square-mid-windows2" parent="tower" instance=ExtResource("7_iogkj")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.0115843, 4.221, -0.0575671)
+
+[node name="tower-square-top-roof-rounded2" parent="." instance=ExtResource("7_ln4pe")]
+transform = Transform3D(2.1, 0, 0, 0, 2.1, 0, 0, 0, 2.1, 1.94553, 3.3001, -0.0446773)
+
+[node name="tower-square-top-roof-rounded3" parent="." instance=ExtResource("7_ln4pe")]
+transform = Transform3D(2.1, 0, 0, 0, 2.1, 0, 0, 0, 2.1, -2.11343, 3.3001, -0.0446773)

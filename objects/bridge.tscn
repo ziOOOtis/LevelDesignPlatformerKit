@@ -33,7 +33,12 @@ transform = Transform3D(3.24472, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 
 mesh = SubResource("QuadMesh_gpajx")
 surface_material_override/0 = SubResource("StandardMaterial3D_sda35")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="2"]
+transform = Transform3D(0.694701, 0.16535, 0.769322, -0.836563, -0.199115, 0.638862, 0.291369, -0.965926, -2.6974e-08, 1.99101, 0.0481787, 0.155179)
+mesh = SubResource("QuadMesh_gpajx")
+surface_material_override/0 = SubResource("StandardMaterial3D_sda35")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="3"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
 transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 0, -3.1245, 0)

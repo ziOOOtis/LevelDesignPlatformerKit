@@ -4,7 +4,9 @@ extends Node3D
 @export var open_door_with_coins : int = 0
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var collision_shape_3d: CollisionShape3D = $StaticBody3D/CollisionShape3D
+
 var is_open : bool
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

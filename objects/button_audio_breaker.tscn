@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://cq7u3l3jw86nb"]
+
+[ext_resource type="PackedScene" uid="uid://4ctk7ies0gdp" path="res://models/props/button-square.glb" id="1_asqkb"]
+[ext_resource type="Script" path="res://scripts/audioButton.gd" id="2_s7tfn"]
+[ext_resource type="AudioStream" uid="uid://dsodhwk7a525r" path="res://sounds/zapsplat_industrial_riding_mower_start_off_instantly_110477.mp3" id="3_1oysu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a52qj"]
+size = Vector3(0.4, 0.2, 0.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0fkk3"]
+size = Vector3(0.9, 0.15, 0.9)
+
+[node name="button_audio" instance=ExtResource("1_asqkb")]
+script = ExtResource("2_s7tfn")
+
+[node name="button-square" parent="." index="0"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="ButtonArea3D" type="Area3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ButtonArea3D" index="0"]
+shape = SubResource("BoxShape3D_a52qj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0751945, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+shape = SubResource("BoxShape3D_0fkk3")
+
+[node name="CooldownTimer" type="Timer" parent="." index="4"]
+wait_time = 1.5
+one_shot = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="5"]
+stream = ExtResource("3_1oysu")
+volume_db = 10.0
+unit_size = 30.0
+max_db = 5.0
+max_distance = 20.0
+bus = &"noise"
+
+[connection signal="area_entered" from="ButtonArea3D" to="." method="_on_button_area_3d_area_entered"]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5jtpx03rmqa"]
+
+[ext_resource type="AudioStream" uid="uid://b4jvtjsgprk3c" path="res://sounds/Vehicle_Car_Engine_1000_RPM_Rear_Exterior_Loop_Mono.wav" id="1_frpds"]
+
+[node name="movingSounds" type="Node3D"]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("1_frpds")
+volume_db = 0.92

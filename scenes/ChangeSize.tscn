@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://cfj3eki7g3lh"]
+[gd_scene load_steps=101 format=3 uid="uid://cfj3eki7g3lh"]
 
 [ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_qjyu8"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_d6tcj"]
@@ -56,6 +56,7 @@
 [ext_resource type="Script" path="res://scripts/hud.gd" id="46_ajuvd"]
 [ext_resource type="Texture2D" uid="uid://cd7oyc56ehkx1" path="res://sprites/coin.png" id="47_uj3al"]
 [ext_resource type="LabelSettings" uid="uid://daohhjonjrdx8" path="res://themes/label_settings.tres" id="48_arvqq"]
+[ext_resource type="PackedScene" uid="uid://cq7u3l3jw86nb" path="res://objects/button_audio_breaker.tscn" id="48_hp4gh"]
 [ext_resource type="FontFile" uid="uid://d0cxd77jybrcn" path="res://fonts/lilita_one_regular.ttf" id="49_d8vth"]
 [ext_resource type="Theme" uid="uid://d3avl0mr4r87l" path="res://themes/default_theme.tres" id="50_dt2jn"]
 [ext_resource type="Texture2D" uid="uid://dm50aa4qogm65" path="res://sprites/button_rectangle_depth_gloss.png" id="51_uff6f"]
@@ -69,6 +70,7 @@
 [ext_resource type="PackedScene" uid="uid://d2veqbfgvsag0" path="res://models/props/tree-pine.glb" id="57_mfdq2"]
 [ext_resource type="PackedScene" uid="uid://pwkx23swhqe2" path="res://objects/noo.tscn" id="58_ro016"]
 [ext_resource type="PackedScene" uid="uid://cgbxmhmktdtbm" path="res://models/prototyping/models/wall-doorway-garage.glb" id="61_r2lvk"]
+[ext_resource type="PackedScene" uid="uid://ko8kadqqqn0b" path="res://objects/button_audio.tscn" id="62_j5vp4"]
 [ext_resource type="PackedScene" uid="uid://btku1igo4osa1" path="res://objects/mountain.tscn" id="62_qi1ef"]
 [ext_resource type="PackedScene" uid="uid://kxlanit681hg" path="res://models/props/platform.glb" id="65_ulwtf"]
 [ext_resource type="PackedScene" uid="uid://dnbt3mrfvervy" path="res://models/props/platform-overhang.glb" id="66_oocwu"]
@@ -81,6 +83,8 @@
 [ext_resource type="PackedScene" uid="uid://cjx48rwwdisac" path="res://objects/towers/ground_hills_2.tscn" id="78_oq7dt"]
 [ext_resource type="PackedScene" uid="uid://dl4qtwxux3ntr" path="res://objects/towers/siege_tower_demolished_2.tscn" id="78_w7g5g"]
 [ext_resource type="PackedScene" uid="uid://coamtj8jtrkhk" path="res://objects/towers/node_tower.tscn" id="80_n3ig4"]
+[ext_resource type="Script" path="res://scripts/playAudio.gd" id="83_maiaw"]
+[ext_resource type="AudioStream" uid="uid://c5wkc0gyr3eu1" path="res://sounds/music_zapsplat_droplets_of_dew.mp3" id="84_5xkiv"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_u8ojw"]
 auto_exposure_scale = 0.75
@@ -117,10 +121,10 @@ point_count = 2
 [sub_resource type="Curve3D" id="Curve3D_6ds6b"]
 bake_interval = 2.0
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.470083, 7.65009, 3.54436, 0, 0, 0, 0, 0, 0, 0.535046, 7.65804, 5.6074, 0, 0, 0, 0, 0, 0, 0.420555, -6.49565, 5.5924),
-"tilts": PackedFloat32Array(0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.470083, 7.65009, 3.54436, 0, 0, 0, 0, 0, 0, 0.535046, 7.65804, 5.6074, 0, 0, 0, 0, 0, 0, 0.420555, -6.49565, 5.5924, 0, 0, 0, 0, 0, 0, 0.421, -6.496, 3.54456, 0, 0, 0, 0, 0, 0, 0.421, 7.63349, 3.54456),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
-point_count = 3
+point_count = 5
 
 [sub_resource type="Curve3D" id="Curve3D_tesbh"]
 bake_interval = 2.0
@@ -622,6 +626,9 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 18.125
 [node name="Final" type="Node3D" parent="World"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
+[node name="button_audio" parent="World/Final" instance=ExtResource("62_j5vp4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.46592, 0.154417, 1.48073)
+
 [node name="button6" parent="World/Final" node_paths=PackedStringArray("target") instance=ExtResource("7_5d8wm")]
 transform = Transform3D(0.869142, 0, -1.80128, 0, 2, 0, 1.80128, 0, 0.869142, 1.46592, 0.154417, 1.48073)
 target = NodePath("../../forgivePath/Uplater")
@@ -742,6 +749,9 @@ ping_pong = true
 [node name="button" parent="World/Final" node_paths=PackedStringArray("target") instance=ExtResource("7_5d8wm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.35308, 6.69008, -2.54795)
 target = NodePath("../../door")
+
+[node name="button_audio2" parent="World/Final" instance=ExtResource("48_hp4gh")]
+transform = Transform3D(0.0615712, 0, -0.998103, 0, 1, 0, 0.998103, 0, 0.0615712, -11.272, 5.50066, -0.7722)
 
 [node name="button2" parent="World/Final" node_paths=PackedStringArray("target") instance=ExtResource("7_5d8wm")]
 transform = Transform3D(0.0615712, 0, -0.998102, 0, 1, 0, 0.998102, 0, 0.0615712, -11.272, 5.50066, -0.7722)
@@ -882,9 +892,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.535046, -6.46501, 5.6074)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0539713, 0.362432, -0.03862)
 target = NodePath("../../moving_object_path2")
 
-[node name="button2" parent="World/forgivePath/platform-moving4" node_paths=PackedStringArray("target") instance=ExtResource("7_5d8wm")]
+[node name="button2" parent="World/forgivePath/platform-moving4" instance=ExtResource("7_5d8wm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0539713, 0.362432, -0.03862)
-target = NodePath("../../moving_object_path3")
 
 [node name="Light12" parent="World/forgivePath/platform-moving4" instance=ExtResource("29_nwxtu")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.0396707, 1.0059, 0.00556946)
@@ -894,7 +903,6 @@ curve = SubResource("Curve3D_6ds6b")
 object_to_move = NodePath("../platform-moving4")
 movement_speed = 3.2
 is_on_from_start = false
-ping_pong = true
 
 [node name="moving_object_path3" parent="World/forgivePath" node_paths=PackedStringArray("object_to_move") instance=ExtResource("9_p1t0y")]
 curve = SubResource("Curve3D_tesbh")
@@ -913,10 +921,11 @@ ping_pong = true
 [node name="platform-large6" parent="World/forgivePath" instance=ExtResource("17_ghato")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.73108, -5.16823, -24.0177)
 
-[node name="button" parent="World" node_paths=PackedStringArray("target") instance=ExtResource("7_5d8wm")]
+[node name="button" parent="World" instance=ExtResource("7_5d8wm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.78752, 0.398652, -26.6619)
-target = NodePath("../moving_object_path")
-pressed_by_default = true
+
+[node name="button_audio" parent="World" instance=ExtResource("48_hp4gh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.78752, 0.398652, -26.6619)
 
 [node name="button2" parent="World" node_paths=PackedStringArray("target") instance=ExtResource("7_5d8wm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.78752, 0.398652, -26.6619)
@@ -930,6 +939,9 @@ target = NodePath("../LookPoint")
 [node name="button3" parent="World" node_paths=PackedStringArray("target") instance=ExtResource("7_5d8wm")]
 transform = Transform3D(0.872837, 0, 0.488012, 0, 1, 0, -0.488012, 0, 0.872837, 19.2522, -4.50587, -17.3448)
 target = NodePath("../moving_object_path")
+
+[node name="button_audio2" parent="World" instance=ExtResource("48_hp4gh")]
+transform = Transform3D(0.872837, 0, 0.488012, 0, 1, 0, -0.488012, 0, 0.872837, 19.2522, -4.50587, -17.3448)
 
 [node name="button4" parent="World" node_paths=PackedStringArray("target") instance=ExtResource("7_5d8wm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.1434, -3.54828, -4.98438)
@@ -1017,10 +1029,10 @@ transform = Transform3D(0.35, -4.50888e-09, -7.45058e-09, 4.19095e-09, 0.35, -3.
 transform = Transform3D(-2.98023e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.98023e-08, 0.115658, 0.386415, 0.112834)
 
 [node name="sign_note" parent="World/block" instance=ExtResource("31_d02bk")]
-transform = Transform3D(-0.152803, -0.49979, 2.95413, -0.0258172, 2.95808, 0.499123, -2.99599, -2.79397e-09, -0.154969, 31.6722, 0.992189, 15.3864)
+transform = Transform3D(2.74933, -0.176369, 1.18747, -0.0258172, 2.95808, 0.499123, -1.20022, -0.467636, 2.70939, 24.9538, 0.453783, 8.28369)
 
 [node name="sign3" parent="World/block" instance=ExtResource("23_ojd8c")]
-transform = Transform3D(3.95745, 0.301524, 0.497719, -0.452024, 3.7474, 1.32387, -0.366499, -1.36602, 3.74161, 32.8677, 0.968007, 13.2175)
+transform = Transform3D(2.97998, 0.296445, 0.178358, -0.339018, 2.81056, 0.992896, -0.0689816, -1.00643, 2.8253, 26.4834, 0.522453, 8.45794)
 
 [node name="coin2" parent="World/block/sign3" instance=ExtResource("24_0hc4o")]
 transform = Transform3D(-2.98023e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.98023e-08, 0.115658, 0.386415, 0.112834)
@@ -1381,6 +1393,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.92128, -0.612685, 21.9721)
 [node name="platform19" parent="World" instance=ExtResource("11_gi6o8")]
 transform = Transform3D(-1, 0, -1.19209e-07, 0, 1, 0, 1.19209e-07, 0, -1, -7.22929, 0, 23.9449)
 
+[node name="button_audio" parent="World/platform19" instance=ExtResource("48_hp4gh")]
+transform = Transform3D(0.625079, 0, -0.780561, 0, 1, 0, 0.780561, 0, 0.625079, 0, 0.345082, 0)
+
 [node name="button" parent="World/platform19" node_paths=PackedStringArray("target") instance=ExtResource("7_5d8wm")]
 transform = Transform3D(0.625079, 0, -0.780561, 0, 1, 0, 0.780561, 0, 0.625079, 0, 0.345082, 0)
 target = NodePath("../../door_tutorial")
@@ -1597,7 +1612,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.40641, 8.23989, 1.59407)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.66922, 0.915464, -17.613)
 
 [node name="coin11" parent="World" instance=ExtResource("20_ju2bg")]
-transform = Transform3D(0.155572, 0, -0.987824, 0, 1, 0, 0.987824, 0, 0.155572, 32.8804, 1.26571, 14.7824)
+transform = Transform3D(0.155572, 0, -0.987824, 0, 1, 0, 0.987824, 0, 0.155572, 23.4445, 1.26571, 8.51402)
 
 [node name="coin8" parent="World" instance=ExtResource("20_ju2bg")]
 transform = Transform3D(-1, 0, -1.19209e-07, 0, 1, 0, 1.19209e-07, 0, -1, -7.26569, 0.853629, 23.9498)
@@ -2323,7 +2338,7 @@ transform = Transform3D(-2.43681, 0.246662, -1.73236, -0.606917, 2.66653, 1.2333
 transform = Transform3D(0.3, 0, -1.31134e-08, -1.31134e-08, 5.73206e-16, -0.3, 0, 0.3, 5.73206e-16, 0.00399017, 0.400275, 0.0827532)
 
 [node name="sign6" parent="." instance=ExtResource("23_ojd8c")]
-transform = Transform3D(-0.852915, 0.654246, -2.2571, -0.450847, 2.31101, 0.840234, 2.30636, 0.693701, -0.670448, -0.180994, 5.55901, 12.2501)
+transform = Transform3D(-1.68478, 0.331935, -1.81696, -0.450847, 2.31101, 0.840234, 1.79117, 0.893912, -1.49755, -0.180994, 5.55901, 11.7893)
 
 [node name="Noo" parent="sign6" instance=ExtResource("58_ro016")]
 transform = Transform3D(0.3, 0, -1.31134e-08, -1.31134e-08, 5.73206e-16, -0.3, 0, 0.3, 5.73206e-16, 0.00399017, 0.400275, 0.0827532)
@@ -2481,11 +2496,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.3805, -4.07119, -24.5944)
 [node name="NodeTower2" parent="." instance=ExtResource("80_n3ig4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.242278, -4.23774, 18.9885)
 
+[node name="NodeTower3" parent="." instance=ExtResource("80_n3ig4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.373308, 0.761628, 13.5694)
+
 [node name="coin" parent="." instance=ExtResource("20_ju2bg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.23663, -3.48635, -18.9812)
 
 [node name="coin2" parent="." instance=ExtResource("20_ju2bg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.17801, -3.48635, -19.3456)
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("84_5xkiv")
+volume_db = -10.0
+autoplay = true
+bus = &"bgm"
+parameters/looping = true
+script = ExtResource("83_maiaw")
 
 [connection signal="coin_collected" from="Player" to="HUD" method="_on_coin_collected"]
 [connection signal="reached_goal" from="Player" to="HUD" method="_on_player_reached_goal"]

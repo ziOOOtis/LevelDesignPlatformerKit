@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://coamtj8jtrkhk"]
+[gd_scene load_steps=9 format=3 uid="uid://coamtj8jtrkhk"]
 
 [ext_resource type="PackedScene" uid="uid://dmrsh06e24cp2" path="res://models/castle_model/tower-square-mid-open-simple.glb" id="1_kjmjw"]
 [ext_resource type="PackedScene" uid="uid://ct5n26ipawrv2" path="res://models/castle_model/tower-square-mid-open.glb" id="2_s8qvl"]
@@ -9,6 +9,9 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cvixx"]
 size = Vector3(1, 0.260986, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r6iap"]
+size = Vector3(1, 2.18887, 1)
 
 [node name="NodeTower" type="Node3D"]
 
@@ -29,6 +32,10 @@ transform = Transform3D(3, 0, 0, 0, 1.875, 0, 0, 0, 3, -0.00788593, 4.08689, 0.0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tower-square-top2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.123169, 0)
 shape = SubResource("BoxShape3D_cvixx")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="tower-square-top2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0, -1.07652, 0)
+shape = SubResource("BoxShape3D_r6iap")
 
 [node name="tower-square-top-roof2" parent="." instance=ExtResource("4_nc5pj")]
 transform = Transform3D(2.6, 0, 0, 0, 1.5, 0, 0, 0, 2.6, -0.00246429, 6.65292, 0.101632)

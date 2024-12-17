@@ -4,11 +4,12 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jgdnl"]
 transparency = 4
-albedo_color = Color(1.54018e-06, 0.576425, 0.876021, 0.690196)
-metallic = 1.0
+albedo_color = Color(0, 0.576471, 0.87451, 0.443137)
+metallic = 0.95
 metallic_texture = ExtResource("1_8f7wo")
 emission_enabled = true
 emission = Color(0, 2.11775e-06, 0.961455, 1)
+emission_operator = 1
 
 [sub_resource type="QuadMesh" id="QuadMesh_86udo"]
 material = SubResource("StandardMaterial3D_jgdnl")

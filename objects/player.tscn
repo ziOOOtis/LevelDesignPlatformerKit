@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://dl2ed4gkybggf"]
+[gd_scene load_steps=16 format=3 uid="uid://dl2ed4gkybggf"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ffboj"]
 [ext_resource type="PackedScene" uid="uid://c0e27836xgmhi" path="res://objects/character.tscn" id="2_nero3"]
 [ext_resource type="Texture2D" uid="uid://8ggihh27mlrr" path="res://sprites/blob_shadow.png" id="3_0c7wt"]
+[ext_resource type="Texture2D" uid="uid://0odt7cvj574e" path="res://models/core_models/Textures/colormap.png" id="3_dub1f"]
 [ext_resource type="PackedScene" uid="uid://dk1inne27lf4o" path="res://models/prototyping/models/hat-cap.glb" id="3_whnsp"]
 [ext_resource type="PackedScene" uid="uid://dga6mkag8nwjj" path="res://models/prototyping/models/number-double-3.glb" id="4_ewvak"]
 [ext_resource type="ArrayMesh" uid="uid://deu06eho4c74" path="res://vfx_meshes/dust.res" id="4_mvhqy"]
@@ -11,6 +12,24 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gdq8c"]
 radius = 0.3
 height = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r0ycv"]
+resource_name = "colormap"
+cull_mode = 2
+disable_fog = true
+albedo_texture = ExtResource("3_dub1f")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gg4bi"]
+resource_name = "colormap"
+cull_mode = 2
+disable_fog = true
+albedo_texture = ExtResource("3_dub1f")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h5dyx"]
+resource_name = "colormap"
+cull_mode = 2
+disable_fog = true
+albedo_texture = ExtResource("3_dub1f")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wmioh"]
 size = Vector3(0.25, 0.469604, 0.25)
@@ -39,6 +58,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 shape = SubResource("CapsuleShape3D_gdq8c")
 
 [node name="Character" parent="." instance=ExtResource("2_nero3")]
+
+[node name="torso" parent="Character/character/root" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_r0ycv")
+
+[node name="arm-left" parent="Character/character/root/torso" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_gg4bi")
+
+[node name="arm-right" parent="Character/character/root/torso" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_h5dyx")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Character/character/root/torso/arm-right" index="0"]
+transform = Transform3D(0.033272, -0.962048, 0.270845, -0.83614, 0.121659, 0.534854, -0.547506, -0.24426, -0.800359, 0, 0, 0)
+light_color = Color(1, 0.923663, 0.608249, 1)
+light_energy = 1.5
+spot_range = 6.42662
+spot_angle = 18.9868
 
 [node name="hat-cap2" parent="Character/character/root/torso" index="3" instance=ExtResource("3_whnsp")]
 transform = Transform3D(-0.118619, 0, 2.79749, -0.419868, 2.76829, -0.0178032, -2.7658, -0.420245, -0.117275, -0.00344849, 0.416666, 0.0583107)

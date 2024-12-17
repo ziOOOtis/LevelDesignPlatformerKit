@@ -6,10 +6,18 @@
 [node name="sign_note" instance=ExtResource("1_476rm")]
 
 [node name="Label3D" type="Label3D" parent="." index="1"]
-transform = Transform3D(0.999563, 0, -0.0295616, 0, 1, 0, 0.0295616, 0, 0.999563, 0, 0.394863, 0.081206)
+transform = Transform3D(0.999563, 0, -0.0295616, 0, 1, 0, 0.0295616, 0, 0.999563, 0, 0.477359, 0.0823639)
 modulate = Color(1, 1, 0.513726, 1)
 outline_modulate = Color(0.858824, 0.482353, 0, 1)
-text = "FIX 
-BRIDGE"
+text = "FIX"
 font = ExtResource("2_0ilqn")
-font_size = 21
+font_size = 24
+
+[node name="Label3D2" type="Label3D" parent="." index="2"]
+transform = Transform3D(0.999563, 0, -0.0295616, 0, 1, 0, 0.0295616, 0, 0.999563, 0, 0.312852, 0.0823639)
+modulate = Color(1, 1, 0.513726, 1)
+outline_modulate = Color(0.858824, 0.482353, 0, 1)
+text = "the
+bridge"
+font = ExtResource("2_0ilqn")
+font_size = 16

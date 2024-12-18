@@ -1,7 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://dppaaoqj1t6n5"]
+[gd_scene load_steps=7 format=3 uid="uid://dppaaoqj1t6n5"]
 
 [ext_resource type="PackedScene" uid="uid://ik4cnj0bwqve" path="res://models/props/spike-block.glb" id="1_rw0dj"]
 [ext_resource type="PackedScene" uid="uid://bunxb353h3lje" path="res://objects/damage_dealer_area_3d.tscn" id="2_2lu74"]
+[ext_resource type="Texture2D" uid="uid://72ldk18ropuj" path="res://models/props/Textures/colormap.png" id="2_bfj0w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ose1k"]
+resource_name = "colormap"
+cull_mode = 2
+disable_fog = true
+albedo_texture = ExtResource("2_bfj0w")
+texture_filter = 2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_psce6"]
 size = Vector3(0.5, 0.5, 0.5)
@@ -10,6 +18,9 @@ size = Vector3(0.5, 0.5, 0.5)
 size = Vector3(0.8, 0.8, 0.8)
 
 [node name="spike-block" instance=ExtResource("1_rw0dj")]
+
+[node name="spike-block" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ose1k")
 
 [node name="AnimatableBody3D" type="AnimatableBody3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)

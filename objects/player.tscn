@@ -49,8 +49,8 @@ point_count = 3
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-collision_layer = 3
-collision_mask = 9
+collision_layer = 259
+collision_mask = 521
 script = ExtResource("1_ffboj")
 
 [node name="Collider" type="CollisionShape3D" parent="."]
@@ -59,20 +59,30 @@ shape = SubResource("CapsuleShape3D_gdq8c")
 
 [node name="Character" parent="." instance=ExtResource("2_nero3")]
 
+[node name="leg-left" parent="Character/character/root" index="0"]
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 0.125, 0.17625, -0.02375)
+
+[node name="leg-right" parent="Character/character/root" index="1"]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -0.125, 0.17625, -0.02375)
+
 [node name="torso" parent="Character/character/root" index="2"]
+transform = Transform3D(1, 0, 0, 0, 0.996194, 0.0871557, 0, -0.0871557, 0.996194, -1.80478e-15, 0.17625, -0.02375)
 surface_material_override/0 = SubResource("StandardMaterial3D_r0ycv")
 
 [node name="arm-left" parent="Character/character/root/torso" index="0"]
+transform = Transform3D(0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0, 1, 0.3, 0.175, 0)
 surface_material_override/0 = SubResource("StandardMaterial3D_gg4bi")
 
 [node name="arm-right" parent="Character/character/root/torso" index="1"]
+transform = Transform3D(0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0, 1, -0.3, 0.1195, 0)
 surface_material_override/0 = SubResource("StandardMaterial3D_h5dyx")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Character/character/root/torso/arm-right" index="0"]
-transform = Transform3D(0.033272, -0.962048, 0.270845, -0.83614, 0.121659, 0.534854, -0.547506, -0.24426, -0.800359, 0, 0, 0)
+transform = Transform3D(-0.100464, -0.994236, -0.0374358, -0.969876, 0.0894705, 0.226573, -0.221918, 0.0590705, -0.973275, 0, 0, 0)
 light_color = Color(1, 0.923663, 0.608249, 1)
 light_energy = 1.5
-spot_range = 6.42662
+light_volumetric_fog_energy = 0.3
+spot_range = 6.90754
 spot_angle = 18.9868
 
 [node name="hat-cap2" parent="Character/character/root/torso" index="3" instance=ExtResource("3_whnsp")]
@@ -82,7 +92,8 @@ transform = Transform3D(-0.118619, 0, 2.79749, -0.419868, 2.76829, -0.0178032, -
 transform = Transform3D(0.197369, -0.00228024, 0.0322571, -0.0322453, 0.00119091, 0.19738, -0.00244244, -0.199984, 0.000807607, -0.0972016, 0.100982, 0.0525501)
 
 [node name="ButtonPresserArea3D" type="Area3D" parent="Character"]
-collision_layer = 4
+collision_layer = 260
+collision_mask = 513
 monitoring = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Character/ButtonPresserArea3D"]

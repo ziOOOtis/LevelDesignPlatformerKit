@@ -17,6 +17,8 @@ size = Vector3(5, 0.5, 5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jue36"]
 albedo_color = Color(1, 0.203821, 0.226479, 1)
+distance_fade_mode = 2
+distance_fade_max_distance = 3.0
 
 [node name="platform-large" instance=ExtResource("1_kqlae")]
 

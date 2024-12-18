@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://nc0yoqf4jy2p"]
+[gd_scene load_steps=11 format=3 uid="uid://nc0yoqf4jy2p"]
 
 [ext_resource type="PackedScene" uid="uid://bqynmf1spp8g4" path="res://objects/towers/CentraPlateform.tscn" id="5_asqlc"]
 [ext_resource type="PackedScene" uid="uid://c05asd8wtdkab" path="res://models/castle_model/tower-square-top-roof-high-windows.glb" id="5_oqa8q"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://w2k7sgtain2i" path="res://models/castle_model/tower-square-arch.glb" id="7_h4qa8"]
 [ext_resource type="PackedScene" uid="uid://d1vumncg8ewwx" path="res://models/castle_model/tower-square-mid-windows.glb" id="7_iogkj"]
 [ext_resource type="PackedScene" uid="uid://xwjfxsvi4je2" path="res://models/castle_model/tower-square-top-roof-rounded.glb" id="7_ln4pe"]
+[ext_resource type="PackedScene" uid="uid://dmrsh06e24cp2" path="res://models/castle_model/tower-square-mid-open-simple.glb" id="8_3cj2n"]
+[ext_resource type="PackedScene" uid="uid://ct5n26ipawrv2" path="res://models/castle_model/tower-square-mid-open.glb" id="9_yd0tn"]
 [ext_resource type="PackedScene" uid="uid://csrtbx82vwa5m" path="res://models/castle_model/tower-square-top.glb" id="10_hiy27"]
 
 [node name="Ending_tower" type="Node3D"]
@@ -14,7 +16,7 @@
 [node name="tower" type="Node3D" parent="."]
 
 [node name="tower-square-top-roof-high-windows2" parent="tower" instance=ExtResource("5_oqa8q")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.00088644, 5.6614, -0.0931981)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.00088644, 8.04447, -0.0931981)
 
 [node name="tower-square-base-border2" parent="tower" instance=ExtResource("6_d6rsx")]
 transform = Transform3D(3.6, 0, 0, 0, 1.8, 0, 0, 0, 3.6, -0.0617833, -4.32771, -0.0604867)
@@ -83,7 +85,7 @@ transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 1.24081, -3.86557, -4.4
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -1.30302, -3.86557, -4.42026)
 
 [node name="tower-square-top2" parent="tower" instance=ExtResource("10_hiy27")]
-transform = Transform3D(2.4, 0, 0, 0, 2.4, 0, 0, 0, 2.4, -0.018765, 3.68853, -0.0877626)
+transform = Transform3D(2.4, 0, 0, 0, 2.4, 0, 0, 0, 2.4, -0.018765, 6.0716, -0.0877626)
 
 [node name="tower-square-top3" parent="tower" instance=ExtResource("10_hiy27")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.018765, 0.368931, 2.77885)
@@ -101,10 +103,19 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 2.96123, 0.368931, -0.0099558
 transform = Transform3D(-1.04907e-07, 0, 2.4, 0, 2.4, 0, -2.4, 0, -1.04907e-07, 0.0146241, 0.923525, -0.159022)
 
 [node name="tower-square-mid-windows2" parent="tower" instance=ExtResource("7_iogkj")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.0115843, 4.221, -0.0575671)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.0115843, 6.60407, -0.0575671)
+
+[node name="tower-square-mid-open-simple3" parent="tower" instance=ExtResource("8_3cj2n")]
+transform = Transform3D(2.4, 0, 0, 0, 2.4, 0, 0, 0, 2.4, 1.93656, 3.32641, -0.0535178)
+
+[node name="tower-square-mid-open-simple4" parent="tower" instance=ExtResource("8_3cj2n")]
+transform = Transform3D(2.4, 0, 0, 0, 2.4, 0, 0, 0, 2.4, -2.20703, 3.32641, -0.0535178)
+
+[node name="tower-square-mid-open2" parent="tower" instance=ExtResource("9_yd0tn")]
+transform = Transform3D(2.4, 0, 0, 0, 2.4, 0, 0, 0, 2.4, -0.0438294, 3.9967, -0.0535178)
 
 [node name="tower-square-top-roof-rounded2" parent="." instance=ExtResource("7_ln4pe")]
-transform = Transform3D(2.1, 0, 0, 0, 2.1, 0, 0, 0, 2.1, 1.94553, 3.3001, -0.0446773)
+transform = Transform3D(2.1, 0, 0, 0, 2.1, 0, 0, 0, 2.1, 1.94553, 5.37189, -0.0446773)
 
 [node name="tower-square-top-roof-rounded3" parent="." instance=ExtResource("7_ln4pe")]
-transform = Transform3D(2.1, 0, 0, 0, 2.1, 0, 0, 0, 2.1, -2.11343, 3.3001, -0.0446773)
+transform = Transform3D(2.1, 0, 0, 0, 2.1, 0, 0, 0, 2.1, -2.11343, 5.37189, -0.0446773)

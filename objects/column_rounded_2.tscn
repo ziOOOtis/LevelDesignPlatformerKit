@@ -8,7 +8,7 @@ resource_name = "colormap"
 cull_mode = 2
 albedo_texture = ExtResource("2_sqhc7")
 texture_filter = 2
-distance_fade_mode = 1
+distance_fade_mode = 2
 distance_fade_max_distance = 8.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_owm35"]

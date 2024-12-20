@@ -44,6 +44,7 @@ shadow_mesh = SubResource("ArrayMesh_76qo0")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k3p05"]
 resource_name = "colormap"
 cull_mode = 2
+disable_fog = true
 albedo_texture = ExtResource("2_itp0m")
 uv1_offset = Vector3(1.12, 0, 0)
 texture_filter = 2

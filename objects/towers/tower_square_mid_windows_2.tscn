@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpts81xojnh80"]
+
+[ext_resource type="PackedScene" uid="uid://d1vumncg8ewwx" path="res://models/castle_model/tower-square-mid-windows.glb" id="1_tssd7"]
+[ext_resource type="Texture2D" uid="uid://cuyncjo4aiwh2" path="res://models/castle_model/Textures/colormap.png" id="2_pcpyj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fal7j"]
+resource_name = "colormap"
+cull_mode = 2
+disable_fog = true
+albedo_texture = ExtResource("2_pcpyj")
+texture_filter = 2
+
+[node name="tower-square-mid-windows2" instance=ExtResource("1_tssd7")]
+
+[node name="tower-square-mid-windows" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fal7j")

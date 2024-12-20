@@ -68,14 +68,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_gg4bi")
 [node name="arm-right" parent="Character/character/root/torso" index="1"]
 surface_material_override/0 = SubResource("StandardMaterial3D_h5dyx")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Character/character/root/torso/arm-right" index="0"]
-transform = Transform3D(-0.0911073, -0.995841, -3.51965e-05, -0.960519, 0.0878658, 0.263974, -0.262873, 0.0240838, -0.964531, 0.252978, 0.252978, 0.0313004)
-light_color = Color(1, 0.923663, 0.608249, 1)
-light_energy = 1.5
-light_volumetric_fog_energy = 0.2
-spot_range = 6.90754
-spot_angle = 18.9868
-
 [node name="hat-cap2" parent="Character/character/root/torso" index="3" instance=ExtResource("3_whnsp")]
 transform = Transform3D(-0.118619, 0, 2.79749, -0.419868, 2.76829, -0.0178032, -2.7658, -0.420245, -0.117275, -0.00344849, 0.416666, 0.0583107)
 

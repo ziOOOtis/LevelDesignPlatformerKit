@@ -9,6 +9,8 @@ resource_name = "colormap"
 cull_mode = 2
 disable_fog = true
 albedo_texture = ExtResource("2_bfj0w")
+emission_enabled = true
+backlight_enabled = true
 texture_filter = 2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_psce6"]

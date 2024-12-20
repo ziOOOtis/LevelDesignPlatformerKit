@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://rg0lrkorpbtn"]
+
+[ext_resource type="PackedScene" uid="uid://pf5l2pmpx3eo" path="res://models/castle_model/tower-square-top-color.glb" id="1_b0otk"]
+[ext_resource type="Texture2D" uid="uid://cuyncjo4aiwh2" path="res://models/castle_model/Textures/colormap.png" id="2_0hmns"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xsdfd"]
+resource_name = "colormap"
+cull_mode = 2
+albedo_texture = ExtResource("2_0hmns")
+uv1_offset = Vector3(0.42, 0, 0)
+texture_filter = 2
+
+[node name="moving_mesh" instance=ExtResource("1_b0otk")]
+
+[node name="tower-square-top-color" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_xsdfd")

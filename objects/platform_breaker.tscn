@@ -25,6 +25,7 @@ point_count = 3
 [node name="platformBreaker" instance=ExtResource("1_o5yyt")]
 
 [node name="platform-falling2" parent="." index="0"]
+visible = true
 surface_material_override/0 = SubResource("StandardMaterial3D_1naf4")
 
 [node name="spike-block" parent="." index="2" instance=ExtResource("3_i6gcq")]
@@ -69,3 +70,6 @@ direction = Vector3(0, 0, 0)
 gravity = Vector3(0, 0.1, 0)
 scale_amount_min = 0.75
 scale_amount_curve = SubResource("Curve_mevmn")
+
+[node name="moving_mesh" parent="." index="9"]
+visible = false

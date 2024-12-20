@@ -1,14 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://bu3mvifbwnnfp"]
+[gd_scene load_steps=5 format=3 uid="uid://bu3mvifbwnnfp"]
 
 [ext_resource type="PackedScene" uid="uid://ctsyh8fjntx7y" path="res://models/props/door-rotate-large.glb" id="1_tujt1"]
 [ext_resource type="Script" path="res://scripts/door.gd" id="2_ytaq4"]
+[ext_resource type="AudioStream" uid="uid://dw2m5fxhfjykq" path="res://sounds/jump.ogg" id="3_co2r2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2844u"]
 size = Vector3(2, 2, 0.5)
 
-[node name="LookPoint" groups=["Door"] instance=ExtResource("1_tujt1")]
+[node name="LookPoint" node_paths=PackedStringArray("open_Door_Sound") groups=["Door"] instance=ExtResource("1_tujt1")]
 process_mode = 3
 script = ExtResource("2_ytaq4")
+open_Door_Sound = NodePath("AudioStreamPlayer")
 
 [node name="door-rotate-large" parent="." index="0"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
@@ -22,3 +24,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 3.53243e-18, -2.38418e-
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_2844u")
 disabled = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="3"]
+stream = ExtResource("3_co2r2")
+volume_db = 3.0
+bus = &"noise"

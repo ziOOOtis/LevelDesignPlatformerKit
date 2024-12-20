@@ -5,6 +5,9 @@ extends Node3D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var collision_shape_3d: CollisionShape3D = $StaticBody3D/CollisionShape3D
 
+@export var open_Door_Sound: AudioStreamPlayer
+@export var final_Door_Sound: AudioStreamPlayer3D
+
 var is_open : bool
 
 
@@ -16,6 +19,7 @@ func open_close_door(open : bool) -> void:
 	is_open = open
 	if open:
 		animation_player.play("open")
+		open_Door_Sound.play()
 		collision_shape_3d.set_deferred("disabled", true)
 	else:
 		animation_player.play("close")
@@ -29,6 +33,7 @@ func coin_amount_updated(coins_amount) -> void:
 	if open_door_with_coins > 0:
 		if coins_amount >= open_door_with_coins and not is_open:
 			open_close_door(true)
+			final_Door_Sound.play()
 
 func receive_input(on : bool) -> void:
 	open_close_door(on)

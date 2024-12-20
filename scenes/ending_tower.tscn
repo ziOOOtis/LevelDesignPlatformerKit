@@ -166,10 +166,10 @@ transform = Transform3D(2.6, 0, 0, 0, 2.6, 0, 0, 0, 2.6, 0.0839319, 4.70441, -2.
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.0115843, 12.9253, -0.186044)
 
 [node name="tower-square-top-roof-rounded4" parent="." instance=ExtResource("10_nlk3h")]
-transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 2.0799, 6.6323, -0.0446773)
+transform = Transform3D(2.8, 0, 0, 0, 2.8, 0, 0, 0, 2.8, 2.14122, 6.6323, -0.0446773)
 
 [node name="tower-square-top-roof-rounded5" parent="." instance=ExtResource("10_nlk3h")]
-transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -2.29676, 6.6323, -0.0446773)
+transform = Transform3D(2.8, 0, 0, 0, 2.8, 0, 0, 0, 2.8, -2.46958, 6.6323, -0.0446773)
 
 [node name="tower-square-top-roof-rounded6" parent="." instance=ExtResource("10_nlk3h")]
 transform = Transform3D(2.1, 0, 0, 0, 2.1, 0, 0, 0, 2.1, -0.070787, 9.42978, 1.90352)

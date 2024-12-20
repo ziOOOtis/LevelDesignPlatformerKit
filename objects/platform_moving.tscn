@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bpharv43ulngb"]
+[gd_scene load_steps=7 format=3 uid="uid://bpharv43ulngb"]
 
 [ext_resource type="PackedScene" uid="uid://biyd6x403gvny" path="res://models/core_models/platform-falling.glb" id="1_wvq4c"]
 [ext_resource type="Texture2D" uid="uid://72ldk18ropuj" path="res://models/props/Textures/colormap.png" id="2_n2tog"]
+[ext_resource type="PackedScene" uid="uid://rg0lrkorpbtn" path="res://objects/moving_mesh.tscn" id="3_ob1r7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xec8c"]
 albedo_texture = ExtResource("2_n2tog")
@@ -15,6 +16,7 @@ size = Vector3(2, 0.5, 2)
 [node name="platform-moving" instance=ExtResource("1_wvq4c")]
 
 [node name="platform-falling2" parent="." index="0"]
+visible = false
 surface_material_override/0 = SubResource("StandardMaterial3D_xec8c")
 
 [node name="AnimatableBody3D" type="AnimatableBody3D" parent="." index="1"]
@@ -24,3 +26,6 @@ sync_to_physics = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D" index="0"]
 shape = SubResource("BoxShape3D_cypsh")
+
+[node name="moving_mesh" parent="." index="2" instance=ExtResource("3_ob1r7")]
+transform = Transform3D(1.97557, 0, 0, 0, 1.67454, 0, 0, 0, 1.97557, 0, 0, 0)

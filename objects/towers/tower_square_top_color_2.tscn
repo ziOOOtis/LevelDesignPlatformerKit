@@ -9,6 +9,8 @@ cull_mode = 2
 disable_fog = true
 albedo_texture = ExtResource("2_gb24c")
 texture_filter = 2
+distance_fade_mode = 2
+distance_fade_max_distance = 6.0
 
 [node name="tower-square-top-color2" instance=ExtResource("1_8qlbl")]
 

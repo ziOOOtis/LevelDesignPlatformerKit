@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjmqfhj8rmc35"]
+
+[ext_resource type="PackedScene" uid="uid://ojdai2qvsijt" path="res://objects/sign_note.tscn" id="1_3urcw"]
+
+[node name="sign_note" instance=ExtResource("1_3urcw")]
+
+[node name="Label3D" parent="." index="1"]
+transform = Transform3D(0.999563, 0, -0.0295616, 0, 1, 0, 0.0295616, 0, 0.999563, 0, 0.446442, 0.0823639)
+text = "To"
+
+[node name="Label3D2" parent="." index="2"]
+transform = Transform3D(0.999563, 0, -0.0295616, 0, 1, 0, 0.0295616, 0, 0.999563, 0, 0.302851, 0.0823639)
+text = "the top"

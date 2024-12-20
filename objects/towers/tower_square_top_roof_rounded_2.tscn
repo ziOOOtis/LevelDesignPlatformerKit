@@ -10,6 +10,8 @@ disable_fog = true
 albedo_texture = ExtResource("2_62puo")
 uv1_offset = Vector3(0.81, 0, 0)
 texture_filter = 2
+distance_fade_mode = 2
+distance_fade_max_distance = 6.0
 
 [node name="tower-square-top-roof-rounded2" instance=ExtResource("1_sibis")]
 
